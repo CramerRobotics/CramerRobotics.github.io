@@ -49,3 +49,27 @@ footer{
   color: white;
   padding-right: 0%;
 }
+.lispace{
+  margin: 10px 0;
+}'
+.lismallspace{
+  margin: 0.5px 0;
+}
+
+/* there's a column for the body as well like in the footer */
+.column {
+    float: left;
+    width: 40%;
+    padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.column a{
+  color: white;
+}

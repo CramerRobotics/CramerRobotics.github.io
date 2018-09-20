@@ -147,67 +147,145 @@ img {vertical-align: middle;}
 </head>
 <body>
 
-<div class="slideshow-container">
 
-<div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
-  <img src="data:image/png;base64,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" style="width:100%">
-  <div class="text">Caption Text</div>
-</div>
+  
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  
+  <!--[if lt IE 9]>
+  <script src="../lib/html5shim.js"></script>
+  <![endif]-->  
+  
+  <!-- These are some core styles the slideshow app requires -->
+  <link rel="stylesheet" href="../lib/styles.css" />
+  
+  <!-- These are the styles you'll add to make the slides look great -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <title>Example Slideshow</title>
+</head>
+<body>
+  <header>
+    <h1>Example Slide Show</h1>
+    <nav>
+      <ul>
+        <li><button id="prev-btn" title="Previous slide">Previous Slide</button></li>
+        <li><span id="slide-number"></span>/<span id="slide-total"></span></li>
+        <li><button id="next-btn" title="Next Slide">Next Slide</button></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="deck">
+    
+    <!-- Begin slides -->
+    <section>
+      <hgroup>
+        <h1>Hello, interwebs explorer.</h1>
+        <h2>How to use this thing</h2>
+      </hgroup>
+      <p>Press the right arrow, down arrow, or spacebar to advance; press the left arrow or up arrow to move backward.</p>
+  		<p>You can also click the left and right arrows in the control bar at the top.</p>
+    </section>
+    <section>
+      <hgroup>
+        <h1>Intraslide animation</h1>
+        <h2>I'm calling these "actions"</h2>
+      </hgroup>
+        <p>You can hide/reveal content within the slides by giving something a class of "action". Actions are revealed in the order in which they occur in the HTML. Advancing to the next slide will first reveal actions on the page if they exist.</p>
+  	  <pre>
+&lt;p class=&quot;action&quot;&gt;This will be hidden when the slide loads&lt;/p&gt;
+  	  </pre>	
+      <ul>
+        <li class="action">Bullet point</li>
+        <li class="action">Another bullet point</li>
+        <li class="action">Yet another bullet point</li>
+        <li class="action">You get the idea</li>
+      </ul>
+    </section>
+    <section>
+      <hgroup>
+        <h1>Custom events</h1>
+        <h2>These may or may not be useful for you</h2>
+      </hgroup>
+      <p>When a new slide is loaded, a "newSlide" event is fired. (Take a look at your console.)</p>
+  		<p>There's also an event triggered when a new "action" is revealed.</p>
+  		<pre>
+//Example usage
+$(&#x27;html&#x27;).bind(&#x27;newSlide&#x27;, function(e,id) { console.log(id) });
+  		</pre>
+    </section>
+  	<section>
+      <hgroup>
+        <h1>Building slides</h1>
+        <h2>It's easy</h2>
+      </hgroup>
+      <p>Each slide goes within a <code>section</code> element, like this:</p>
+  		<pre>
+&lt;section&gt;
+    &lt;hgroup&gt;
+        &lt;h1&gt;Your heading&lt;/h1&gt;
+        &lt;h2&gt;Your subheading&lt;/h2&gt;
+    &lt;/hgroup&gt;
+    &lt;p&gt;All your slide content...&lt;/p&gt;
+&lt;/section&gt;
+  		</pre>
+  	  <p>You don't have to worry about numbering the slides. The script will count the number of <code>section</code> elements and give each one a numbered ID on page load.</p>
+    </section>
+  	<section>
+      <hgroup>
+        <h1>Plays well with images</h1>
+      </hgroup>
 
-<div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="img_snow_wide.jpg" style="width:100%">
-  <div class="text">Caption Two</div>
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
-  <img src="img_mountains_wide.jpg" style="width:100%">
-  <div class="text">Caption Three</div>
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-<a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
-
-</body>
-</html> 
-
+      <img src="images/best-stegosaurus.png" alt="The Best Dinosaur" />
+      
+    </section>    
+    <section>
+      <hgroup>
+        <h1>Other details</h1>
+        <h2>Small stuff</h2>
+      </hgroup>
+  		<p>The hash updates with each slide.</p>
+  		<p>The slideshow itself has 3 dependencies: jQuery, htmlSlides.js, and a small stylesheet.</p>
+  		<p>The slide script has one option, the option to hide the toolbar at the top:</p>
+  		<pre>
+htmlSlides.init({ toolbar: true });
+  		</pre>
+    </section>
+  	<section>
+      <hgroup>
+        <h1>That's all</h1>
+      </hgroup>
+      <p>Get it at <a href="http://github.com/robflaherty/html-slideshow">github</a>.</p>
+      <p>- Rob Flaherty / <a href="http://twitter.com/robflaherty">@robflaherty</a> / <a href="mailto:rob@ravelrumba.com">rob@ravelrumba.com</a></p>
+    </section>
+    <!-- /End slides -->
+    
+  </div>
+  <!-- /deck -->
+  <script src="../lib/jquery-1.5.2.min.js"></script>
+  <script src="../lib/jquery.jswipe-0.1.2.js"></script>  
+  <script src="../lib/htmlSlides.js"></script>
+  <script>
+    //Do our business when the DOM is ready for us
+    $(function() {
+      
+      //You can trigger Javascript based on the slide number like this:
+      $('html').bind('newSlide', function(e, id) { 
+        switch(id) {
+          case 2:
+            console.log('This is the second slide.');;
+            break;
+          case 3:
+            console.log('Hello, third slide.');
+            break;
+        }
+      });
+      //One little option: hideToolbar (boolean; default = false)
+      htmlSlides.init({ hideToolbar: true });
+      
+    });
+  </script>
+  </body>
+</html>

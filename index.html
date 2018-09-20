@@ -1,4 +1,581 @@
-<div id="slideshow">
+<html lang="en" style="height: 100%;"><head id="ctl00_ctl00_Head1"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><style class="vjs-styles-dimensions">
+      .dimensions-5b2df34d-f17a-4b45-9da7-cf6f989eadf2 {
+        width: 360px;
+        height: 201.6px;
+      }
+
+      .dimensions-5b2df34d-f17a-4b45-9da7-cf6f989eadf2.vjs-fluid {
+        padding-top: 56.25%;
+      }
+    </style><style class="vjs-styles-dimensions">
+      .dimensions-3b2e7954-f2fb-4df1-b467-5fdf56e7c576 {
+        width: 360px;
+        height: 201.6px;
+      }
+
+      .dimensions-3b2e7954-f2fb-4df1-b467-5fdf56e7c576.vjs-fluid {
+        padding-top: 56.25%;
+      }
+    </style><style class="vjs-styles-dimensions">
+      .dimensions-79e2b5fa-5b8c-463a-a952-901ed542f887 {
+        width: 360px;
+        height: 201.6px;
+      }
+
+      .dimensions-79e2b5fa-5b8c-463a-a952-901ed542f887.vjs-fluid {
+        padding-top: 56.25%;
+      }
+    </style><title>Home - Essexville-Hampton Public Schools</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700" rel="stylesheet" type="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="SI" content="/admin/districthome.aspx">
+
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<link rel="stylesheet" href="/admin/css/social-links.css">
+
+
+<link href="https://cdn.schoolpointe.com/js/nivo-slider/nivo-slider.css" rel="stylesheet" type="text/css">
+<link href="https://cdn.schoolpointe.com/jquery-ui/1.8.9/css/smoothness/jquery-ui.css" rel="stylesheet" type="text/css">
+
+<script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://cdn.schoolpointe.com/js/jquery-1.11.1.min.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/hoverIntent.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/superfish.1.7.js" type="text/javascript"></script>
+
+<link href="/Content/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.schoolpointe.com/js/bootstrapAccessibility/css/bootstrap-accessibility.css" rel="stylesheet">
+<script src="/Scripts/bootstrap.min.js"></script>
+<script src="/js/Bootstrap.dropdown.Override.js"></script>
+<script src="https://cdn.schoolpointe.com/js/bootstrapAccessibility/js/bootstrap-accessibility.min.js"></script>
+
+<script src="https://cdn.schoolpointe.com/js/jquery.dropshadow.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/search/SearchEngine.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/jquery.guid.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/jquery.dotimeout.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/querystring.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/jquery.shadowon.min.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/menu-collapsed.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/menu.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script src="https://cdn.schoolpointe.com/jquery-ui/1.8.9/js/jquery-ui.min.js" type="text/javascript"></script>
+<!--[if IE]>
+    <script src="https://cdn.schoolpointe.com/js/html5-ie.js" type="text/javascript" language="javascript"></script>
+    <![endif]-->
+
+
+<link href="https://cdn.schoolpointe.com/js/video-js-5.11.7/video-js.min.css" rel="stylesheet">
+<script src="https://cdn.schoolpointe.com/js/video-js-5.11.7/video.min.v.adaFixes.js"></script>
+<style type="text/css">
+    .vjs-volume-menu-button.vjs-menu-button-inline .vjs-menu {
+        opacity: 1;
+    }
+</style>
+
+<script type="text/javascript">
+    function loadVideo(guid, playlist) {
+        videojs(guid, playlist, function () {
+            var origWidth = jQuery('#' + guid).parent().data('width');
+            var origHeight = jQuery('#' + guid).parent().data('height');
+
+            var actualWidth = jQuery('#' + guid).parent().width();
+            if (origWidth > actualWidth) {
+                this.height(origHeight * (actualWidth / origWidth));
+                this.width(actualWidth);
+
+                //Retroactively fixes an issue with resizing videos
+                //the style attribute shouldn't be on the parent
+                jQuery('#' + guid).parent().removeAttr('style');
+
+            } else {
+                this.height(origHeight);
+                this.width(origWidth);
+            }
+            if (playlist != '{}') {
+                this.on('ended', function () {
+                    this.playlist.next();
+                });
+            }
+
+            //fixes issue in IE when going full screen
+            //video would be behind other content on the page
+            this.on('enterFullWindow', function () {
+                $(this.el).parents().not('html,body').each(function () {
+                    $(this)
+                        .data('oldzindex', $(this).css('z-index'))
+                        .css('z-index', 99999)
+                        .addClass('forcedzindex');
+                });
+            });
+            this.on('exitFullWindow', function () {
+                $('.forcedzindex').each(function () {
+                    $(this)
+                        .css('z-index', $(this).data('oldzindex'))
+                        .removeClass('forcedzindex')
+                        .removeData('oldzindex');
+                });
+
+            });
+        });
+    }
+
+    jQuery(window).load(function () {
+
+        //Create the input element
+        var reCaptchinput = $('#recaptcha_response_field');
+        if (reCaptchinput != "") {
+            reCaptchinput.wrapAll("<label class=''  associatedcontrolid='recaptcha_response_field' text='recaptcha'>recaptcha </label>");
+        }
+
+
+        jQuery.browser = {}; (function () {
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0; if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+                jQuery.browser.msie = true; jQuery.browser.version = RegExp.$1;
+            }
+        })();
+        if (jQuery.browser.msie && jQuery.browser.version <= 7) {
+            //we could do something else here...
+            console.log("You should really update your browser");
+        }
+
+        videojs.options.flash.iFrameMode = true;
+        jQuery('.videoplayer > .video-js').each(function () {
+            var guid = this.id;
+            var playlist = jQuery('#' + guid).parent().data('playlist');
+            if (playlist === undefined || playlist === null) {
+                playlist = '{}';
+                loadVideo(guid, playlist);
+            }
+        });
+    });
+</script>
+
+<!--IE 8 and below Bootstrapfix-->
+<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+	<style tyoe="text/css">
+	    .quicklinks{ display: none !important;}
+	</style>
+<![endif]-->
+<!-- Bootstrap -->
+
+<script type="text/javascript">
+
+    // needed for jquery bbq, needs jQuery.browser that had been deprecated.
+
+    jQuery.browser = {};
+    (function () {
+        jQuery.browser.msie = false;
+        jQuery.browser.version = 0;
+        if (navigator.userAgent.match(/MSIE ([0-9]+)\./)) {
+            jQuery.browser.msie = true;
+            jQuery.browser.version = RegExp.$1;
+        }
+    })();
+
+</script>
+
+
+<link rel="stylesheet" type="text/css" href="https://cdn.schoolpointe.com/js/datetimepicker/jquery.datetimepicker.css">
+<script src="https://cdn.schoolpointe.com/js/datetimepicker/jquery.datetimepicker.js"></script>
+<script src="https://cdn.schoolpointe.com/js/jquery.blockUI.js"></script>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.schoolpointe.com/js/jquery-frontier-cal-1.3.2/css/frontierCalendar/jquery-frontier-cal-1.3.2.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.schoolpointe.com/js/jquery-frontier-cal-1.3.2/css/colorpicker/colorpicker.css">
+<link rel="Stylesheet" type="text/css" href="https://cdn.schoolpointe.com/css/CalendarPopupStyle.css">
+<link href="https://cdn.schoolpointe.com/css/schoolpointe.css?version=1.2" rel="stylesheet" type="text/css">
+<link href="https://cdn.schoolpointe.com/css/bully-report.css" rel="stylesheet" type="text/css">
+
+
+
+<link rel="alternate" type="application/rss+xml" title="Essexville-Hampton Public Schools - News" href="/rssNews.ashx">
+
+        <link rel="alternate" type="application/rss+xml" title="Garber High School - News" href="/rssNews.ashx?schoolId=1">
+    
+        <link rel="alternate" type="application/rss+xml" title="Cramer Junior High School - News" href="/rssNews.ashx?schoolId=2">
+    
+        <link rel="alternate" type="application/rss+xml" title="Verellen Elementary - News" href="/rssNews.ashx?schoolId=3">
+    
+        <link rel="alternate" type="application/rss+xml" title="Bush Elementary - News" href="/rssNews.ashx?schoolId=4">
+    
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-58503126-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script src="https://cdn.schoolpointe.com/HTML_CodeSniffer-2.0.7/build/HTMLCS.js"></script>
+<script>
+
+    if (!Array.prototype.indexOf)
+        Array.prototype.indexOf = function (searchValue, index) {
+            // In non-strict-mode, if the `this` variable is null
+            // or undefined, then it is set the the window object.
+            // Else, `this` is automaticly converted to an object.
+            var len = this.length >>> 0; // convert ot number or 0
+
+            index |= 0;              // rounds and NaN-checks
+            if (index < 0)             // check if negative start
+                index = Math.max(len - index, 0);
+            else if (index >= len) // else, check if too big
+                return -1;
+
+            if (searchValue === undefined)
+                // Because searchValue is undefined, keys that
+                // don't exist will have the same value as the
+                // searchValue, and thus do need to be checked.
+                do {
+                    if (index in this && this[index] === undefined)
+                        return index;
+                } while (++index !== len)
+            else
+                // Because searchValue is not undefined, there's no
+                // need to check if the current key is in the array
+                // because if the key isn't in the array, then it's
+                // undefined which is not equal to the searchValue.
+                do {
+                    if (this[index] === searchValue)
+                        return index;
+                } while (++index !== len)
+
+            // if nothing was found, then simply return -1
+            return -1;
+        };
+
+    window['HtmlCodeSniffer_Done'] = false;
+
+    $(document).ready(function () {
+        $('#goog-gt-tt .logo > img').attr('alt', 'Google tanslate icon');
+
+        var submitErrors = function () {
+            try {
+                var options = {
+                    path: "https://cdn.schoolpointe.com/HTML_CodeSniffer-2.0.7/build/"
+                };
+
+                HTMLCS.process("WCAG2AA", document,
+                    function (data) {
+                        var messages = HTMLCS.getMessages();
+                        var length = messages.length;
+
+                        if (length > 0) {
+                            messages = messages.filter(function (a) {
+                                return a.type == 1;
+                            });
+
+                            var filterOut = [
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.AlignAttr',
+                                'WCAG2AA.Principle1.Guideline1_4.1_4_3.G18.Fail',
+                                'WCAG2AA.Principle4.Guideline4_1.4_1_1.F77',
+                                'WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.InputHidden.Name',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.F68',
+                                'WCAG2AA.Principle1.Guideline1_4.1_4_3.G145.Fail',
+                                'WCAG2AA.Principle3.Guideline3_2.3_2_2.H32.2',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Font',
+                                //'WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.NoContent',
+                                //'WCAG2AA.Principle4.Guideline4_1.4_1_2.H91.A.EmptyNoId',
+                                'WCAG2AA.Principle2.Guideline2_4.2_4_1.G1,G123,G124.NoSuchID',
+                                'WCAG2AA.Principle1.Guideline1_1.1_1_1.H67.1',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Center',
+                                'WCAG2AA.Principle2.Guideline2_4.2_4_2.H25.1.EmptyTitle',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Big',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H39.3.LayoutTable',
+                                'WCAG2AA.Principle1.Guideline1_1.1_1_1.H53,ARIA6',
+                                'WCAG2AA.Principle2.Guideline2_4.2_4_1.H64.1',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.F92,ARIA4',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H49.Tt',
+                                'WCAG2AA.Principle1.Guideline1_3.1_3_1.H43,H63'
+                            ];
+
+                            messages = messages.filter(function (a) {
+                                return filterOut.indexOf(a.code) == -1;
+                            });
+
+                            var count = messages.length;
+
+                            console.log(messages);
+
+                            window['HtmlCodeSniffer_Errors'] = count;
+
+                            if (count > 0) {
+                                $("#AdaErrorCount").text("ADA errors: " + count);
+                                var url = "http://wave.webaim.org/report#/" + window.location.href;
+                                $("#AdaErrorCount").attr("href", url);
+                            }
+                            else {
+                                $("#AdaErrorCount").remove();
+                            }
+
+                            var data = {
+                                districtId: "MI_EssexvilleHamptonPS",
+                                url: "/index.aspx",
+                                errorCount: count,
+                                value: parseInt("0", 10),
+                                forceUpdate: 'false' === 'true'
+                            };
+
+                            try {
+                                var methodUrl = "/admin/shared/AdaLog.asmx/RecordLog";
+                                $.ajax({
+                                    type: "POST",
+                                    url: methodUrl,
+                                    data: JSON.stringify(data),
+                                    contentType: "application/json; charset=utf-8",
+                                    dataType: "json",
+                                    success: function (msg) {
+                                        window['HtmlCodeSniffer_Done'] = true;
+                                    },
+                                    error: function (e) {
+                                        console.log(e);
+                                        window['HtmlCodeSniffer_Done'] = true;
+                                    }
+                                });
+                            } catch (ex) {
+                                window['HtmlCodeSniffer_Done'] = true;
+                            }
+
+                        }
+
+                    }, function (error) {
+                        console.log(error)
+                    });
+            } catch (ex) {
+                console.log(ex);
+            }
+        };
+
+        submitErrors();
+    });
+
+
+</script>
+
+
+<style type="text/css">
+    #expandQuickLink1,expandQuickLink2{color:#000;}
+    .quickLinkHamburger1, .quickLinkHamburger2{display:none;}
+    .quickLinkHamburgerShow1, .quickLinkHamburgerShow2{display:block;}
+</style>
+    
+	<style type="text/css">
+    </style>
+
+    
+    
+    <style type="text/css">
+        .panel {
+            background: none;
+            margin: 0 !important;
+            padding: 10px 0 !important;
+            box-shadow: none;
+            border: none;
+            border-radius: 0;
+        }
+
+            .panel h1, .panel2 h1, .panel header, #news-list .article .view-all, .panel p, #news-list .article a.news-title, .view-all-news, .view-full-calendar {
+                color: #fff !important;
+            }
+
+            .panel h1, .panel2 h1 {
+                text-shadow: -1px 1px 1px #000;
+            }
+
+        #news-list .article a.news-image, span.news-post-date {
+            display: none;
+        }
+
+        ul.nav.navbar-nav.left-nav li a i {
+            color: #fff !important;
+        }
+
+
+        body a.schoolName {
+            display: block !important;
+        }
+
+        body a.logo {
+            width: 170px;
+            height: 170px;
+            margin: 5px auto -40px;
+        }
+
+        .searchengine {
+            position: absolute;
+            right: 20px;
+        }
+
+        .nav-logo-container.hidden-xs {
+            height: 100px;
+        }
+    </style>
+<link id="ctl00_ctl00_SiteCSS" rel="stylesheet" type="text/css" href="/siteCSS.aspx?&amp;intranet=0&amp;checksum=1516741992130"><link rel="icon" href="/userfiles/-13/My%20Files/favicon.ico" type="image/x-icon"><link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css"><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/translate_static/js/element/main.js"></script><style type="text/css" media="print">.dropShadow{visibility:hidden;}</style><script type="text/javascript" charset="UTF-8" src="https://translate.googleapis.com/element/TE_20180625_00/e/js/element/element_main.js"></script><link rel="stylesheet" href="https://dashboard.eidexinsights.com/Essexville-Hampton/budgetBadge.css"></head>
+<body class="school-0 index" style="position: relative; min-height: 100%; top: 0px;">
+    <form name="aspnetForm" method="post" action="./" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJMzAyNzUzNTE4D2QWAmYPZBYCZg9kFgRmD2QWBmYPZBYCZg9kFgICAQ8WAh4EVGV4dAUhRXNzZXh2aWxsZS1IYW1wdG9uIFB1YmxpYyBTY2hvb2xzZAIED2QWAgIBDxYCHgtfIUl0ZW1Db3VudAIEFghmD2QWAmYPFQISR2FyYmVyIEhpZ2ggU2Nob29sATFkAgEPZBYCZg8VAhlDcmFtZXIgSnVuaW9yIEhpZ2ggU2Nob29sATJkAgIPZBYCZg8VAhNWZXJlbGxlbiBFbGVtZW50YXJ5ATNkAgMPZBYCZg8VAg9CdXNoIEVsZW1lbnRhcnkBNGQCBg8WAh4EaHJlZgUwL3NpdGVDU1MuYXNweD8maW50cmFuZXQ9MCZjaGVja3N1bT0xNTE2NzQxOTkyMTMwZAIBD2QWDgIBD2QWAgIDD2QWAgICD2QWAmYPFgIfAAUbPHVsIGNsYXNzPSdhbGVydExpc3QnPjwvdWw+ZAIDD2QWAgIBD2QWAgIBD2QWEgIBDw8WAh8ABSFFc3NleHZpbGxlLUhhbXB0b24gUHVibGljIFNjaG9vbHNkZAIDDxYCHwAFFUVzc2V4dmlsbGUtSGFtcHRvbiBQU2QCBQ9kFgJmDxYCHwAFyws8dWwgY2xhc3M9J25hdiBuYXZiYXItbmF2IGRpc3RyaWN0LXRvcC1sZWZ0LW5hdi1saW5rcycgPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLycgIHRpdGxlPSdIb21lJz5Ib21lPC9hPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyAgdGl0bGU9J0Rpc3RyaWN0Jz5EaXN0cmljdCAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMzYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQWRtaW5pc3RyYXRpdmUgU3RhZmYnPkFkbWluaXN0cmF0aXZlIFN0YWZmPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvZW1wbG95bWVudCcgIHRpdGxlPSdFbXBsb3ltZW50Jz5FbXBsb3ltZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2Rhc2hib2FyZC5laWRleGluc2lnaHRzLmNvbS9Fc3NleHZpbGxlLUhhbXB0b24vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0J1ZGdldCBUcmFuc3BhcmVuY3knPkJ1ZGdldCBUcmFuc3BhcmVuY3k8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS9vcGVuP2lkPTBCOEx3Zy1GUjJ4T2phSHBGWVRabVZqZDZUVWsnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRGlzdHJpY3QgU2FmZXR5IERyaWxscyc+RGlzdHJpY3QgU2FmZXR5IERyaWxsczwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nICB0aXRsZT0nU2Nob29scyc+U2Nob29scyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzEvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdHYXJiZXIgSGlnaCBTY2hvb2wnPkdhcmJlciBIaWdoIFNjaG9vbDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzIvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDcmFtZXIgSnVuaW9yIEhpZ2gnPkNyYW1lciBKdW5pb3IgSGlnaDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzMvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdWZXJlbGxlbiBFbGVtZW50YXJ5Jz5WZXJlbGxlbiBFbGVtZW50YXJ5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvNC9ob21lJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0J1c2ggRWxlbWVudGFyeSc+QnVzaCBFbGVtZW50YXJ5PC9hPjwvbGk+PC91bD48L2xpPjwvdWw+ZAIHD2QWAmYPFgIfAAXOWDx1bCBjbGFzcz0nbmF2IG5hdmJhci1uYXYgZGlzdHJpY3QtdG9wLXJpZ2h0LW5hdi1saW5rcycgPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgIHRpdGxlPSdQYXJlbnRzJz5QYXJlbnRzICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC83MCcgIHRpdGxlPSdTY2hvb2wgU3VwcGx5IExpc3RzJz5TY2hvb2wgU3VwcGx5IExpc3RzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3NreTIuYmFpc2QubmV0L3NjcmlwdHMvd3Npc2EuZGxsL1dTZXJ2aWNlPXdzRUFwbHVzL3NlcGxvZzAxLncnICB0aXRsZT0nU2t5d2FyZCc+U2t5d2FyZDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2NoYXJ0d2VsbHNrMTIuY29tcGFzcy11c2EuY29tL0Vzc2V4dmlsbGVIYW1wdG9uUHVibGljU2Nob29sc0RpbmluZycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdGb29kIFNlcnZpY2UnPkZvb2QgU2VydmljZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMzgnICB0aXRsZT0nQnVzaCBQcmVzY2hvb2wgYW5kIERheWNhcmUgSW5mb3JtYXRpb24nPkJ1c2ggUHJlc2Nob29sIGFuZCBEYXljYXJlIEluZm9ybWF0aW9uPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vd3d3LnBhcmNobWVudC5jb20vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1BhcmNobWVudCc+UGFyY2htZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3d3dy5wcm90ZWN0bWljaGlsZC5jb20vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1Byb3RlY3QgTUkgQ2hpbGQnPlByb3RlY3QgTUkgQ2hpbGQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly93d3cuYXJib29rZmluZC5jb20nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQVIgQm9va2ZpbmQnPkFSIEJvb2tmaW5kPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvdXNlcmZpbGVzLzMvbXkgZmlsZXMvcGFyZW50IG10ZyBwcmVzZW50YXRpb24gMjAxNy5wZGY/aWQ9MTEyMicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPScyMDE3IFdhc2hpbmd0b24gREMgVHJpcCBJbmZvIChDcmFtZXIgOHRoIEdyYWRlKSc+MjAxNyBXYXNoaW5ndG9uIERDIFRyaXAgSW5mbyAoQ3JhbWVyIDh0aCBHcmFkZSk8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy91c2VyZmlsZXMvMy9teSBmaWxlcy9vcHQgb3V0IGZvcm0ucGRmP2lkPTQyOTQnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nTWVkaWEgT3B0LU91dCBGb3JtJz5NZWRpYSBPcHQtT3V0IEZvcm08L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy91c2VyZmlsZXMvMy9teSBmaWxlcy8yMDE3LTE4IG1lZGlhIG9wdCBvdXQgbGV0dGVyLnBkZj9pZD00Mjk1JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J01lZGlhIE9wdC1PdXQgTGV0dGVyJz5NZWRpYSBPcHQtT3V0IExldHRlcjwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nICB0aXRsZT0nU3R1ZGVudHMnPlN0dWRlbnRzICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3NreTIuYmFpc2QubmV0L3NjcmlwdHMvd3Npc2EuZGxsL1dTZXJ2aWNlPXdzRUFwbHVzL3NlcGxvZzAxLncnICB0aXRsZT0nU2t5d2FyZCc+U2t5d2FyZDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hL2UtaHBzLm5ldC8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRW1haWwnPkVtYWlsPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2VocHMuaWxsdW1pbmF0ZWhjLmNvbS8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nSWxsdW1pbmF0ZSc+SWxsdW1pbmF0ZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2NoYXJ0d2VsbHNrMTIuY29tcGFzcy11c2EuY29tL0Vzc2V4dmlsbGVIYW1wdG9uUHVibGljU2Nob29sc0RpbmluZycgIHRpdGxlPSdGb29kIFNlcnZpY2UnPkZvb2QgU2VydmljZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9jbGV2ZXIuY29tL29hdXRoL3Npcy9sb2dpbj90YXJnZXQ9TlRkaVlqTmtOakV6TkRsalptUXdNVEF3TURBd056VXglM0JOR00yTTJNeFkyWTJNak5rWTJVNE1tTmhZV00lM0QlM0JhSFIwY0hNNkx5OWpiR1YyWlhJdVkyOXRMMmx1TDJGMWRHaGZZMkZzYkdKaFkycyUzRCUzQk9EVmlNV1l5T1RNNE9EaGpNVFJsTkRJeVpEWXlOREptTkRrMk5tVTFNRGRsTWpnek5tUTVNVEEzTUdNM01ESTFOemcxTmpnNVpUazVabVl4WldFMlpRJTNEJTNEJTNCWTI5a1pRJTNEJTNEJmFtcDtza2lwPTEmYW1wO3NjaG9vbF9uYW1lPSZhbXA7ZGVmYXVsdF9iYWRnZT0nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ2xldmVyIEZvciBTdHVkZW50cyc+Q2xldmVyIEZvciBTdHVkZW50czwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTUyJyAgdGl0bGU9J0tERyBNdXNpYyBQcm9ncmFtJz5LREcgTXVzaWMgUHJvZ3JhbTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTUwJyAgdGl0bGU9JzFzdCBHcmFkZSBNdXNpYyBQcm9ncmFtJz4xc3QgR3JhZGUgTXVzaWMgUHJvZ3JhbTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTQ4JyAgdGl0bGU9JzJuZCBHcmFkZSBQcm9ncmFtJz4ybmQgR3JhZGUgUHJvZ3JhbTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2NvbnRlbnQvNTQnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nM3JkIEdyYWRlIENvbmNlcnQnPjNyZCBHcmFkZSBDb25jZXJ0PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xNDYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nM3JkIGFuZCA0dGggR3JhZGUgT25saW5lIFJlY29yZGVyIEthcmF0ZSc+M3JkIGFuZCA0dGggR3JhZGUgT25saW5lIFJlY29yZGVyIEthcmF0ZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTQ0JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9JzR0aCBHcmFkZSBTcHJpbmcgUHJvZ3JhbSc+NHRoIEdyYWRlIFNwcmluZyBQcm9ncmFtPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vaW5xd2l6aXQub2Fpc2Qub3JnJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0lucXdpeml0Jz5JbnF3aXppdDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL3ZsYy5lbnQuc2lyc2kubmV0L2NsaWVudC9lbl9VUy9nYXJiZXInICB0aXRsZT0nQmF5IENvdW50eSBMaWJyYXJ5IEdhcmJlciBTaXRlJz5CYXkgQ291bnR5IExpYnJhcnkgR2FyYmVyIFNpdGU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzQ2JyAgdGl0bGU9J0dhcmJlciBHdWlkYW5jZSBEZXBhcnRtZW50Jz5HYXJiZXIgR3VpZGFuY2UgRGVwYXJ0bWVudDwvYT48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgIHRpdGxlPSdBbGV4YW5kcmlhIExpYnJhcnkgQ2F0YWxvZyc+QWxleGFuZHJpYSBMaWJyYXJ5IENhdGFsb2cgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9laGJ1c2guZ29hbGV4YW5kcmlhLmNvbS9yZXNlYXJjaGVyJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0J1c2ggTGlicmFyeSc+QnVzaCBMaWJyYXJ5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZWh2ZXJlbGxlbi5nb2FsZXhhbmRyaWEuY29tL3Jlc2VhcmNoZXInIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nVmVyZWxsZW4gTGlicmFyeSc+VmVyZWxsZW4gTGlicmFyeTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2VoY3JhbWVyLmdvYWxleGFuZHJpYS5jb20vcmVzZWFyY2hlcicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDcmFtZXIgTGlicmFyeSc+Q3JhbWVyIExpYnJhcnk8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9laGdhcmJlci5nb2FsZXhhbmRyaWEuY29tL3Jlc2VhcmNoZXInIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nR2FyYmVyIExpYnJhcnknPkdhcmJlciBMaWJyYXJ5PC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9ob3N0ZWQ2LnJlbmxlYXJuLmNvbS8xMzMyNDcvJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0FjY2VsZXJhdGVkIFJlYWRlcic+QWNjZWxlcmF0ZWQgUmVhZGVyPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZS1ocHMubWkuc2FmZXNjaG9vbHMuY29tL2xvZ2luJyAgdGl0bGU9J1NhZmUgU2Nob29scyBUcmFpbmluZyc+U2FmZSBTY2hvb2xzIFRyYWluaW5nPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2NsYXNzcm9vbS5nb29nbGUuY29tJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0dvb2dsZSBDbGFzc3Jvb20nPkdvb2dsZSBDbGFzc3Jvb208L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly93d3cuYXJib29rZmluZC5jb20nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQVIgQm9va2ZpbmQnPkFSIEJvb2tmaW5kPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vd3d3LmUtaHBzLm5ldC9Db250ZW50LzEyNCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDaG9pciA3LzgnPkNob2lyIDcvODwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNTYnICB0aXRsZT0nTXVzaWMgRXhwcmVzcyc+TXVzaWMgRXhwcmVzczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2Nvbm5lY3RlZC5tY2dyYXctaGlsbC5jb20vc2Nob29sL240eDgnICB0aXRsZT0nQ29ubmVjdEVELVZlcmVsbGVuJz5Db25uZWN0RUQtVmVyZWxsZW48L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9jb25uZWN0ZWQubWNncmF3LWhpbGwuY29tL3NjaG9vbC9kM2U5JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0Nvbm5lY3RFRC1DcmFtZXInPkNvbm5lY3RFRC1DcmFtZXI8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vcGxheS5kcmVhbWJveC5jb20vbG9naW4venpyNi9iaGVuJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0RyZWFtQm94Jz5EcmVhbUJveDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9zaXRlcy5nb29nbGUuY29tL2UtaHBzLm5ldC9laHRlY2hsaW5rcy9ob21lJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0UtSCBUZWNobm9sb2d5IExpbmtzIEstNSc+RS1IIFRlY2hub2xvZ3kgTGlua3MgSy01PC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgIHRpdGxlPSdTdGFmZic+U3RhZmYgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRHVrZSBEaWdpdGFsIFJlc291cmNlcyc+RHVrZSBEaWdpdGFsIFJlc291cmNlcyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNzgnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRHVrZSBEaWdpdGFsIFJlc291cmNlcyBIb21lJz5EdWtlIERpZ2l0YWwgUmVzb3VyY2VzIEhvbWU8L2E+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ3VycmljdWx1bSc+Q3VycmljdWx1bSAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTE2JyAgdGl0bGU9J0N1cnJpY3VsdW0gSG9tZSc+Q3VycmljdWx1bSBIb21lPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xMDgnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nSy01Jz5LLTU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzExMCcgIHRpdGxlPSc2LTEyJz42LTEyPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdUcmFpbmluZyc+VHJhaW5pbmcgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzExNCcgIHRpdGxlPSdUcmFpbmluZyBIb21lJz5UcmFpbmluZyBIb21lPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC84MicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdTa3l3YXJkJz5Ta3l3YXJkPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC85MCcgIHRpdGxlPSdDbGFzc3Jvb20gVGVjaCc+Q2xhc3Nyb29tIFRlY2g8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzEwNicgIHRpdGxlPSdHb29nbGUgQXBwcyc+R29vZ2xlIEFwcHM8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RlY2ggUmVzb3VyY2VzJz5UZWNoIFJlc291cmNlcyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTE4JyAgdGl0bGU9J1RlY2ggUmVzb3VyY2VzIEhvbWUnPlRlY2ggUmVzb3VyY2VzIEhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vcGx1cy5nb29nbGUuY29tL2NvbW11bml0aWVzLzEwNjI3MDAwOTgyODkxNDY5NTcyNicgIHRpdGxlPSdHb29nbGUrJz5Hb29nbGUrPC9hPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RlY2ggQ29hY2hlcyc+VGVjaCBDb2FjaGVzICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xMjAnICB0aXRsZT0nVGVjaCBDb2FjaGVzIEhvbWUnPlRlY2ggQ29hY2hlcyBIb21lPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC9rdW5pbycgIHRpdGxlPSdLdW5pbyc+S3VuaW88L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50Lzk2JyAgdGl0bGU9J1BhdCc+UGF0PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC85OCcgIHRpdGxlPSdNaWtlJz5NaWtlPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTAyJyAgdGl0bGU9J0RUQVQnPkRUQVQ8L2E+PC9saT48L3VsPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9zZWxmc2VydmljZS5iYWlzZC5uZXQvZVN1aXRlX0VIUC9XZWJzaXRlcy5IUi5Qb3J0YWwvRGVmYXVsdC5hc3B4P1JldHVyblVybD0lMkZlU3VpdGVfRUhQJTJGV2Vic2l0ZXMuSFIuUG9ydGFsJTJGJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J05ldyBXb3JsZCBlU3VpdGUgSFIgUG9ydGFsJz5OZXcgV29ybGQgZVN1aXRlIEhSIFBvcnRhbDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9zc28ubWFwbndlYS5vcmcvYXV0aC9sb2dpbicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdOV0VBJz5OV0VBPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvY29udGVudC9zdGFmZmxpbmtzJyAgdGl0bGU9J1N0YWZmIExpbmtzJz5TdGFmZiBMaW5rczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hL2UtaHBzLm5ldC8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRW1haWwnPkVtYWlsPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2VocHMuaWxsdW1pbmF0ZWVkLmNvbScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdJbGx1bWluYXRlJz5JbGx1bWluYXRlPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL21pY2hpZ2FuLmtyZWFkeS5vcmcvbG9naW4nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nS1JBLU1pY2hpZ2FuJz5LUkEtTWljaGlnYW48L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vc2t5Mi5iYWlzZC5uZXQvc2NyaXB0cy93c2lzYS5kbGwvV1NlcnZpY2U9d3NFQXBsdXMvc2VwbG9nMDEudycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdTa3l3YXJkJz5Ta3l3YXJkPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2xpdmUuc3RhZ2Vzc29mdHdhcmUuY29tJyAgdGl0bGU9J1N0YWdlcyBMb2dpbic+U3RhZ2VzIExvZ2luPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vaGVscGRlc2suZS1ocHMubmV0L3BvcnRhbCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdIZWxwZGVzayAoU3VibWl0IGEgVGlja2V0KSc+SGVscGRlc2sgKFN1Ym1pdCBhIFRpY2tldCk8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9oZWxwZGVzay5lLWhwcy5uZXQvcHJvX3VzZXJzL2xvZ2luJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0hlbHBkZXNrIGZvciBBZG1pbnMnPkhlbHBkZXNrIGZvciBBZG1pbnM8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vYmFpc2Q0MDAuYmFpc2QubmV0L1hESFBJMDIwNy9QSU1BSU4uTUJSL1BJTUFJTj9BUElEPVBJMDIwNyZhbXA7TGljVmVyPSZhbXA7TGljQ2xpPSZhbXA7TG9nb249RSZhbXA7UHdkQ2hnPVkmYW1wO1VzZXIxPVVwcGVyQ2FzZSUzRHRydWUmYW1wO1VzZXIyPSZhbXA7VXNlcjM9JmFtcDtVc2VyND0mYW1wO1VzZXI1PSZhbXA7V2luUGFybT10b29sYmFyPTAsbG9jYXRpb249MCxyZXNpemFibGU9MSxzY3JvbGxiYXJzPTEsc3RhdHVzPTEnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ01UJz5DTVQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vZ28yLnBjZ2VkdWNhdGlvbi5jb20vbWllc3NleHZpbGxlaGFtcHRvbicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdFYXN5SUVQJz5FYXN5SUVQPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3d3dy53aWxsc3ViLmNvbS8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nV2lsbHN1Yic+V2lsbHN1YjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9kaWJlbHMubmV0LycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdEaWJlbHMnPkRpYmVsczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL3d3dy5sZWFybjM2MC5jb20vaW5kZXguYXNweCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdMZWFybjM2MCc+TGVhcm4zNjA8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly93d3cuc29sdXRpb253aGVyZS5jb20vZ2xiL2N3L21haW4uYXNwJyAgdGl0bGU9J0JBSVNEIENvdXJzZXdoZXJlIExvZ2luJz5CQUlTRCBDb3Vyc2V3aGVyZSBMb2dpbjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9hc3Auc2Nob29sbWVzc2VuZ2VyLmNvbS9lc3NleHZpbGxlaGFtcHRvbnNkL2luZGV4LnBocCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdTY2hvb2wgTWVzc2VuZ2VyJz5TY2hvb2wgTWVzc2VuZ2VyPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZS1ocHMubWkuc2FmZXNjaG9vbHMuY29tL2xvZ2luJyAgdGl0bGU9J01hbmRhdG9yeSBTdGFmZiBUcmFpbmluZyAoU2FmZSBTY2hvb2xzKSc+TWFuZGF0b3J5IFN0YWZmIFRyYWluaW5nIChTYWZlIFNjaG9vbHMpPC9hPjwvbGk+PC91bD48L2xpPjwvdWw+ZAIJD2QWAmYPFgIfAAX4CDx1bCBjbGFzcz0nbmF2IG5hdmJhci1uYXYgZGlzdHJpY3QtdG9wLW5hdi1saW5rcycgPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLycgIHRpdGxlPSdIb21lJz5Ib21lPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvRGlzdHJpY3RuZXdzQXJ0aWNsZXMuYXNweCcgIHRpdGxlPSdEaXN0cmljdCBOZXdzJz5EaXN0cmljdCBOZXdzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvY2FsTW9udGhWaWV3LmFzcHg/cz0wJyAgdGl0bGU9J0NhbGVuZGFyJz5DYWxlbmRhcjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2FkbWluaXN0cmF0aW9uLmFzcHgnICB0aXRsZT0nRGVwYXJ0bWVudHMnPkRlcGFydG1lbnRzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvZGlzdHJpY3RCb2FyZEVkLmFzcHgnICB0aXRsZT0nQm9hcmQgb2YgRWR1Y2F0aW9uJz5Cb2FyZCBvZiBFZHVjYXRpb248L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9saW5rc0Zvcm1zLmFzcHgnICB0aXRsZT0nRm9ybXMgJmFtcDsgTGlua3MnPkZvcm1zICYgTGlua3M8L2E+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQUVSL0JpZHMvUkZQJiMzOTtzJz5BRVIvQmlkcy9SRlAncyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNjAnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ3VycmVudCBCaWRzJz5DdXJyZW50IEJpZHM8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9jb250ZW50L3JmcCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdPbGRlciBSRlBzJz5PbGRlciBSRlBzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC82NicgIHRpdGxlPSdBRVIgUmVwb3J0cyc+QUVSIFJlcG9ydHM8L2E+PC9saT48L3VsPjwvbGk+PC91bD5kAgsPZBYCZg8WAh8ABfMOPHVsIGNsYXNzPSduYXYgbmF2YmFyLW5hdiBsZWZ0LW5hdi1saW5rcycgPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLycgIHRpdGxlPSdIb21lJz48aSBjbGFzcz0iZmEgZmEtaG9tZSI+PC9pPkhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9EaXN0cmljdG5ld3NBcnRpY2xlcy5hc3B4JyAgdGl0bGU9J0Rpc3RyaWN0IE5ld3MnPkRpc3RyaWN0IE5ld3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9jYWxNb250aFZpZXcuYXNweD9zPTAnICB0aXRsZT0nRGlzdHJpY3QgRXZlbnRzJz5EaXN0cmljdCBFdmVudHM8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9zdXBlck1zZy5hc3B4JyAgdGl0bGU9J1N1cGVyaW50ZW5kZW50JiMzOTtzIE1lc3NhZ2UnPlN1cGVyaW50ZW5kZW50J3MgTWVzc2FnZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2NoYXJ0d2VsbHNrMTIuY29tcGFzcy11c2EuY29tL0Vzc2V4dmlsbGVIYW1wdG9uUHVibGljU2Nob29sc0RpbmluZycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdGb29kIFNlcnZpY2UnPkZvb2QgU2VydmljZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNjgnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ29tbXVuaXR5IEVucmljaG1lbnQnPkNvbW11bml0eSBFbnJpY2htZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvZGlzdHJpY3RCb2FyZEVkLmFzcHgnICB0aXRsZT0nQm9hcmQgb2YgRWR1Y2F0aW9uJz5Cb2FyZCBvZiBFZHVjYXRpb248L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9zY2hvb2xfc3RhZmYuYXNweD9zY2hvb2xJRD0xJyAgdGl0bGU9J1N0YWZmIERpcmVjdG9yeSc+U3RhZmYgRGlyZWN0b3J5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZWhwc2R1a2VzLmNvbS8nICB0aXRsZT0nQXRobGV0aWNzJz5BdGhsZXRpY3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9EaXN0cmljdEdhbGxlcnkuYXNweCcgIHRpdGxlPSdQaG90byBHYWxsZXJpZXMnPlBob3RvIEdhbGxlcmllczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2VtcGxveW1lbnQnICB0aXRsZT0nRW1wbG95bWVudCc+RW1wbG95bWVudDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2xpbmtzRm9ybXMuYXNweCcgIHRpdGxlPSdGb3JtcyAmYW1wOyBMaW5rcyc+Rm9ybXMgJiBMaW5rczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvc3RhZmZsaW5rcycgIHRpdGxlPSdTdGFmZiBMaW5rcyc+U3RhZmYgTGlua3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzEyMicgIHRpdGxlPSdJbnRlZ3JhdGVkIFBlc3RpY2lkZSBNYW5hZ2VtZW50Jz5JbnRlZ3JhdGVkIFBlc3RpY2lkZSBNYW5hZ2VtZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvdXNlcmZpbGVzLzMvbXkgZmlsZXMvZWR1Y2F0b3JfZXZhbHVhdGlvbl8yMDE2LnBkZj9pZD0xNDUyJyAgdGl0bGU9J0VkdWNhdG9yIEV2YWx1YXRpb24gUmVxdWlyZW1lbnRzJz5FZHVjYXRvciBFdmFsdWF0aW9uIFJlcXVpcmVtZW50czwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTI2JyAgdGl0bGU9J0FubnVhbCBFZHVjYXRpb24gUmVwb3J0cyc+QW5udWFsIEVkdWNhdGlvbiBSZXBvcnRzPC9hPjwvbGk+PC91bD5kAg0PZBYCZg8WAh8ABcELPHVsIGNsYXNzPSduYXYgbmF2YmFyLW5hdiBkaXN0cmljdC10b3AtbGVmdCcgPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLycgIHRpdGxlPSdIb21lJz5Ib21lPC9hPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyAgdGl0bGU9J0Rpc3RyaWN0Jz5EaXN0cmljdCAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMzYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQWRtaW5pc3RyYXRpdmUgU3RhZmYnPkFkbWluaXN0cmF0aXZlIFN0YWZmPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvZW1wbG95bWVudCcgIHRpdGxlPSdFbXBsb3ltZW50Jz5FbXBsb3ltZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2Rhc2hib2FyZC5laWRleGluc2lnaHRzLmNvbS9Fc3NleHZpbGxlLUhhbXB0b24vJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0J1ZGdldCBUcmFuc3BhcmVuY3knPkJ1ZGdldCBUcmFuc3BhcmVuY3k8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vZHJpdmUuZ29vZ2xlLmNvbS9vcGVuP2lkPTBCOEx3Zy1GUjJ4T2phSHBGWVRabVZqZDZUVWsnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRGlzdHJpY3QgU2FmZXR5IERyaWxscyc+RGlzdHJpY3QgU2FmZXR5IERyaWxsczwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nICB0aXRsZT0nU2Nob29scyc+U2Nob29scyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzEvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdHYXJiZXIgSGlnaCBTY2hvb2wnPkdhcmJlciBIaWdoIFNjaG9vbDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzIvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDcmFtZXIgSnVuaW9yIEhpZ2gnPkNyYW1lciBKdW5pb3IgSGlnaDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLzMvaG9tZScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdWZXJlbGxlbiBFbGVtZW50YXJ5Jz5WZXJlbGxlbiBFbGVtZW50YXJ5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvNC9ob21lJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0J1c2ggRWxlbWVudGFyeSc+QnVzaCBFbGVtZW50YXJ5PC9hPjwvbGk+PC91bD48L2xpPjwvdWw+ZAIPDw8WAh4LTmF2aWdhdGVVcmwFAS9kZAIRD2QWAmYPFgIfAAXEWDx1bCBjbGFzcz0nbmF2IG5hdmJhci1uYXYgZGlzdHJpY3QtdG9wLXJpZ2h0JyA+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyAgdGl0bGU9J1BhcmVudHMnPlBhcmVudHMgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzcwJyAgdGl0bGU9J1NjaG9vbCBTdXBwbHkgTGlzdHMnPlNjaG9vbCBTdXBwbHkgTGlzdHM8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vc2t5Mi5iYWlzZC5uZXQvc2NyaXB0cy93c2lzYS5kbGwvV1NlcnZpY2U9d3NFQXBsdXMvc2VwbG9nMDEudycgIHRpdGxlPSdTa3l3YXJkJz5Ta3l3YXJkPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vY2hhcnR3ZWxsc2sxMi5jb21wYXNzLXVzYS5jb20vRXNzZXh2aWxsZUhhbXB0b25QdWJsaWNTY2hvb2xzRGluaW5nJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0Zvb2QgU2VydmljZSc+Rm9vZCBTZXJ2aWNlPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8zOCcgIHRpdGxlPSdCdXNoIFByZXNjaG9vbCBhbmQgRGF5Y2FyZSBJbmZvcm1hdGlvbic+QnVzaCBQcmVzY2hvb2wgYW5kIERheWNhcmUgSW5mb3JtYXRpb248L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly93d3cucGFyY2htZW50LmNvbS8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nUGFyY2htZW50Jz5QYXJjaG1lbnQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vd3d3LnByb3RlY3RtaWNoaWxkLmNvbS8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nUHJvdGVjdCBNSSBDaGlsZCc+UHJvdGVjdCBNSSBDaGlsZDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL3d3dy5hcmJvb2tmaW5kLmNvbScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdBUiBCb29rZmluZCc+QVIgQm9va2ZpbmQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy91c2VyZmlsZXMvMy9teSBmaWxlcy9wYXJlbnQgbXRnIHByZXNlbnRhdGlvbiAyMDE3LnBkZj9pZD0xMTIyJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9JzIwMTcgV2FzaGluZ3RvbiBEQyBUcmlwIEluZm8gKENyYW1lciA4dGggR3JhZGUpJz4yMDE3IFdhc2hpbmd0b24gREMgVHJpcCBJbmZvIChDcmFtZXIgOHRoIEdyYWRlKTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL3VzZXJmaWxlcy8zL215IGZpbGVzL29wdCBvdXQgZm9ybS5wZGY/aWQ9NDI5NCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdNZWRpYSBPcHQtT3V0IEZvcm0nPk1lZGlhIE9wdC1PdXQgRm9ybTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL3VzZXJmaWxlcy8zL215IGZpbGVzLzIwMTctMTggbWVkaWEgb3B0IG91dCBsZXR0ZXIucGRmP2lkPTQyOTUnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nTWVkaWEgT3B0LU91dCBMZXR0ZXInPk1lZGlhIE9wdC1PdXQgTGV0dGVyPC9hPjwvbGk+PC91bD48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgIHRpdGxlPSdTdHVkZW50cyc+U3R1ZGVudHMgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vc2t5Mi5iYWlzZC5uZXQvc2NyaXB0cy93c2lzYS5kbGwvV1NlcnZpY2U9d3NFQXBsdXMvc2VwbG9nMDEudycgIHRpdGxlPSdTa3l3YXJkJz5Ta3l3YXJkPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3d3dy5nb29nbGUuY29tL2EvZS1ocHMubmV0LycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdFbWFpbCc+RW1haWw8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vZWhwcy5pbGx1bWluYXRlaGMuY29tLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdJbGx1bWluYXRlJz5JbGx1bWluYXRlPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vY2hhcnR3ZWxsc2sxMi5jb21wYXNzLXVzYS5jb20vRXNzZXh2aWxsZUhhbXB0b25QdWJsaWNTY2hvb2xzRGluaW5nJyAgdGl0bGU9J0Zvb2QgU2VydmljZSc+Rm9vZCBTZXJ2aWNlPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2NsZXZlci5jb20vb2F1dGgvc2lzL2xvZ2luP3RhcmdldD1OVGRpWWpOa05qRXpORGxqWm1Rd01UQXdNREF3TnpVeCUzQk5HTTJNMk14WTJZMk1qTmtZMlU0TW1OaFlXTSUzRCUzQmFIUjBjSE02THk5amJHVjJaWEl1WTI5dEwybHVMMkYxZEdoZlkyRnNiR0poWTJzJTNEJTNCT0RWaU1XWXlPVE00T0Roak1UUmxOREl5WkRZeU5ESm1ORGsyTm1VMU1EZGxNamd6Tm1RNU1UQTNNR00zTURJMU56ZzFOamc1WlRrNVptWXhaV0UyWlElM0QlM0QlM0JZMjlrWlElM0QlM0QmYW1wO3NraXA9MSZhbXA7c2Nob29sX25hbWU9JmFtcDtkZWZhdWx0X2JhZGdlPScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDbGV2ZXIgRm9yIFN0dWRlbnRzJz5DbGV2ZXIgRm9yIFN0dWRlbnRzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xNTInICB0aXRsZT0nS0RHIE11c2ljIFByb2dyYW0nPktERyBNdXNpYyBQcm9ncmFtPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xNTAnICB0aXRsZT0nMXN0IEdyYWRlIE11c2ljIFByb2dyYW0nPjFzdCBHcmFkZSBNdXNpYyBQcm9ncmFtPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xNDgnICB0aXRsZT0nMm5kIEdyYWRlIFByb2dyYW0nPjJuZCBHcmFkZSBQcm9ncmFtPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvY29udGVudC81NCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSczcmQgR3JhZGUgQ29uY2VydCc+M3JkIEdyYWRlIENvbmNlcnQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzE0NicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSczcmQgYW5kIDR0aCBHcmFkZSBPbmxpbmUgUmVjb3JkZXIgS2FyYXRlJz4zcmQgYW5kIDR0aCBHcmFkZSBPbmxpbmUgUmVjb3JkZXIgS2FyYXRlPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xNDQnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nNHRoIEdyYWRlIFNwcmluZyBQcm9ncmFtJz40dGggR3JhZGUgU3ByaW5nIFByb2dyYW08L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9pbnF3aXppdC5vYWlzZC5vcmcnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nSW5xd2l6aXQnPklucXdpeml0PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vdmxjLmVudC5zaXJzaS5uZXQvY2xpZW50L2VuX1VTL2dhcmJlcicgIHRpdGxlPSdCYXkgQ291bnR5IExpYnJhcnkgR2FyYmVyIFNpdGUnPkJheSBDb3VudHkgTGlicmFyeSBHYXJiZXIgU2l0ZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNDYnICB0aXRsZT0nR2FyYmVyIEd1aWRhbmNlIERlcGFydG1lbnQnPkdhcmJlciBHdWlkYW5jZSBEZXBhcnRtZW50PC9hPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyAgdGl0bGU9J0FsZXhhbmRyaWEgTGlicmFyeSBDYXRhbG9nJz5BbGV4YW5kcmlhIExpYnJhcnkgQ2F0YWxvZyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2VoYnVzaC5nb2FsZXhhbmRyaWEuY29tL3Jlc2VhcmNoZXInIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQnVzaCBMaWJyYXJ5Jz5CdXNoIExpYnJhcnk8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9laHZlcmVsbGVuLmdvYWxleGFuZHJpYS5jb20vcmVzZWFyY2hlcicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdWZXJlbGxlbiBMaWJyYXJ5Jz5WZXJlbGxlbiBMaWJyYXJ5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZWhjcmFtZXIuZ29hbGV4YW5kcmlhLmNvbS9yZXNlYXJjaGVyJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0NyYW1lciBMaWJyYXJ5Jz5DcmFtZXIgTGlicmFyeTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2VoZ2FyYmVyLmdvYWxleGFuZHJpYS5jb20vcmVzZWFyY2hlcicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdHYXJiZXIgTGlicmFyeSc+R2FyYmVyIExpYnJhcnk8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2hvc3RlZDYucmVubGVhcm4uY29tLzEzMzI0Ny8nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQWNjZWxlcmF0ZWQgUmVhZGVyJz5BY2NlbGVyYXRlZCBSZWFkZXI8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9lLWhwcy5taS5zYWZlc2Nob29scy5jb20vbG9naW4nICB0aXRsZT0nU2FmZSBTY2hvb2xzIFRyYWluaW5nJz5TYWZlIFNjaG9vbHMgVHJhaW5pbmc8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vY2xhc3Nyb29tLmdvb2dsZS5jb20nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nR29vZ2xlIENsYXNzcm9vbSc+R29vZ2xlIENsYXNzcm9vbTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL3d3dy5hcmJvb2tmaW5kLmNvbScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdBUiBCb29rZmluZCc+QVIgQm9va2ZpbmQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly93d3cuZS1ocHMubmV0L0NvbnRlbnQvMTI0JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0Nob2lyIDcvOCc+Q2hvaXIgNy84PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC81NicgIHRpdGxlPSdNdXNpYyBFeHByZXNzJz5NdXNpYyBFeHByZXNzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vY29ubmVjdGVkLm1jZ3Jhdy1oaWxsLmNvbS9zY2hvb2wvbjR4OCcgIHRpdGxlPSdDb25uZWN0RUQtVmVyZWxsZW4nPkNvbm5lY3RFRC1WZXJlbGxlbjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2Nvbm5lY3RlZC5tY2dyYXctaGlsbC5jb20vc2Nob29sL2QzZTknIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ29ubmVjdEVELUNyYW1lcic+Q29ubmVjdEVELUNyYW1lcjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9wbGF5LmRyZWFtYm94LmNvbS9sb2dpbi96enI2L2JoZW4nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRHJlYW1Cb3gnPkRyZWFtQm94PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3NpdGVzLmdvb2dsZS5jb20vZS1ocHMubmV0L2VodGVjaGxpbmtzL2hvbWUnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nRS1IIFRlY2hub2xvZ3kgTGlua3MgSy01Jz5FLUggVGVjaG5vbG9neSBMaW5rcyBLLTU8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyAgdGl0bGU9J1N0YWZmJz5TdGFmZiAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdEdWtlIERpZ2l0YWwgUmVzb3VyY2VzJz5EdWtlIERpZ2l0YWwgUmVzb3VyY2VzICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC83OCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdEdWtlIERpZ2l0YWwgUmVzb3VyY2VzIEhvbWUnPkR1a2UgRGlnaXRhbCBSZXNvdXJjZXMgSG9tZTwvYT48L2xpPjxsaSBjbGFzcz0nZHJvcGRvd24nPjxhIGhyZWY9JyMnIGNsYXNzPSdkcm9wZG93bi10b2dnbGUnIGRhdGEtdG9nZ2xlPSdkcm9wZG93bicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDdXJyaWN1bHVtJz5DdXJyaWN1bHVtICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xMTYnICB0aXRsZT0nQ3VycmljdWx1bSBIb21lJz5DdXJyaWN1bHVtIEhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzEwOCcgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdLLTUnPkstNTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTEwJyAgdGl0bGU9JzYtMTInPjYtMTI8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1RyYWluaW5nJz5UcmFpbmluZyAgPHN0cm9uZyBjbGFzcz0nY2FyZXQnPjwvc3Ryb25nPjwvYT48dWwgY2xhc3M9J2Ryb3Bkb3duLW1lbnUnPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTE0JyAgdGl0bGU9J1RyYWluaW5nIEhvbWUnPlRyYWluaW5nIEhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzgyJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1NreXdhcmQnPlNreXdhcmQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzkwJyAgdGl0bGU9J0NsYXNzcm9vbSBUZWNoJz5DbGFzc3Jvb20gVGVjaDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTA2JyAgdGl0bGU9J0dvb2dsZSBBcHBzJz5Hb29nbGUgQXBwczwvYT48L2xpPjwvdWw+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nVGVjaCBSZXNvdXJjZXMnPlRlY2ggUmVzb3VyY2VzICA8c3Ryb25nIGNsYXNzPSdjYXJldCc+PC9zdHJvbmc+PC9hPjx1bCBjbGFzcz0nZHJvcGRvd24tbWVudSc+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xMTgnICB0aXRsZT0nVGVjaCBSZXNvdXJjZXMgSG9tZSc+VGVjaCBSZXNvdXJjZXMgSG9tZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9wbHVzLmdvb2dsZS5jb20vY29tbXVuaXRpZXMvMTA2MjcwMDA5ODI4OTE0Njk1NzI2JyAgdGl0bGU9J0dvb2dsZSsnPkdvb2dsZSs8L2E+PC9saT48bGkgY2xhc3M9J2Ryb3Bkb3duJz48YSBocmVmPScjJyBjbGFzcz0nZHJvcGRvd24tdG9nZ2xlJyBkYXRhLXRvZ2dsZT0nZHJvcGRvd24nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nVGVjaCBDb2FjaGVzJz5UZWNoIENvYWNoZXMgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzEyMCcgIHRpdGxlPSdUZWNoIENvYWNoZXMgSG9tZSc+VGVjaCBDb2FjaGVzIEhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50L2t1bmlvJyAgdGl0bGU9J0t1bmlvJz5LdW5pbzwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvOTYnICB0aXRsZT0nUGF0Jz5QYXQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50Lzk4JyAgdGl0bGU9J01pa2UnPk1pa2U8L2E+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvQ29udGVudC8xMDInICB0aXRsZT0nRFRBVCc+RFRBVDwvYT48L2xpPjwvdWw+PC9saT48L3VsPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3NlbGZzZXJ2aWNlLmJhaXNkLm5ldC9lU3VpdGVfRUhQL1dlYnNpdGVzLkhSLlBvcnRhbC9EZWZhdWx0LmFzcHg/UmV0dXJuVXJsPSUyRmVTdWl0ZV9FSFAlMkZXZWJzaXRlcy5IUi5Qb3J0YWwlMkYnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nTmV3IFdvcmxkIGVTdWl0ZSBIUiBQb3J0YWwnPk5ldyBXb3JsZCBlU3VpdGUgSFIgUG9ydGFsPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3Nzby5tYXBud2VhLm9yZy9hdXRoL2xvZ2luJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J05XRUEnPk5XRUE8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9jb250ZW50L3N0YWZmbGlua3MnICB0aXRsZT0nU3RhZmYgTGlua3MnPlN0YWZmIExpbmtzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL3d3dy5nb29nbGUuY29tL2EvZS1ocHMubmV0LycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdFbWFpbCc+RW1haWw8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vZWhwcy5pbGx1bWluYXRlZWQuY29tJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0lsbHVtaW5hdGUnPklsbHVtaW5hdGU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vbWljaGlnYW4ua3JlYWR5Lm9yZy9sb2dpbicgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdLUkEtTWljaGlnYW4nPktSQS1NaWNoaWdhbjwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9za3kyLmJhaXNkLm5ldC9zY3JpcHRzL3dzaXNhLmRsbC9XU2VydmljZT13c0VBcGx1cy9zZXBsb2cwMS53JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1NreXdhcmQnPlNreXdhcmQ8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vbGl2ZS5zdGFnZXNzb2Z0d2FyZS5jb20nICB0aXRsZT0nU3RhZ2VzIExvZ2luJz5TdGFnZXMgTG9naW48L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9oZWxwZGVzay5lLWhwcy5uZXQvcG9ydGFsJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0hlbHBkZXNrIChTdWJtaXQgYSBUaWNrZXQpJz5IZWxwZGVzayAoU3VibWl0IGEgVGlja2V0KTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2hlbHBkZXNrLmUtaHBzLm5ldC9wcm9fdXNlcnMvbG9naW4nIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nSGVscGRlc2sgZm9yIEFkbWlucyc+SGVscGRlc2sgZm9yIEFkbWluczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9iYWlzZDQwMC5iYWlzZC5uZXQvWERIUEkwMjA3L1BJTUFJTi5NQlIvUElNQUlOP0FQSUQ9UEkwMjA3JmFtcDtMaWNWZXI9JmFtcDtMaWNDbGk9JmFtcDtMb2dvbj1FJmFtcDtQd2RDaGc9WSZhbXA7VXNlcjE9VXBwZXJDYXNlJTNEdHJ1ZSZhbXA7VXNlcjI9JmFtcDtVc2VyMz0mYW1wO1VzZXI0PSZhbXA7VXNlcjU9JmFtcDtXaW5QYXJtPXRvb2xiYXI9MCxsb2NhdGlvbj0wLHJlc2l6YWJsZT0xLHNjcm9sbGJhcnM9MSxzdGF0dXM9MScgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdDTVQnPkNNVDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cHM6Ly9nbzIucGNnZWR1Y2F0aW9uLmNvbS9taWVzc2V4dmlsbGVoYW1wdG9uJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0Vhc3lJRVAnPkVhc3lJRVA8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHBzOi8vd3d3LndpbGxzdWIuY29tLycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdXaWxsc3ViJz5XaWxsc3ViPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2RpYmVscy5uZXQvJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0RpYmVscyc+RGliZWxzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vd3d3LmxlYXJuMzYwLmNvbS9pbmRleC5hc3B4JyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0xlYXJuMzYwJz5MZWFybjM2MDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL3d3dy5zb2x1dGlvbndoZXJlLmNvbS9nbGIvY3cvbWFpbi5hc3AnICB0aXRsZT0nQkFJU0QgQ291cnNld2hlcmUgTG9naW4nPkJBSVNEIENvdXJzZXdoZXJlIExvZ2luPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwczovL2FzcC5zY2hvb2xtZXNzZW5nZXIuY29tL2Vzc2V4dmlsbGVoYW1wdG9uc2QvaW5kZXgucGhwJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J1NjaG9vbCBNZXNzZW5nZXInPlNjaG9vbCBNZXNzZW5nZXI8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9J2h0dHA6Ly9lLWhwcy5taS5zYWZlc2Nob29scy5jb20vbG9naW4nICB0aXRsZT0nTWFuZGF0b3J5IFN0YWZmIFRyYWluaW5nIChTYWZlIFNjaG9vbHMpJz5NYW5kYXRvcnkgU3RhZmYgVHJhaW5pbmcgKFNhZmUgU2Nob29scyk8L2E+PC9saT48L3VsPjwvbGk+PC91bD5kAgUPZBYCAgEPZBYCAgEPFgIfAQIIFhBmD2QWAmYPFQMAADsvdXNlcmZpbGVzLzIwMTgtMDYvMTEzOTNhZGQtMTliMy00OTNlLWE4MTQtZTViYmVmY2RlZTVlLmpwZ2QCAQ9kFgJmDxUDAAA+L2RvY3MvYnVpbGRpbmcvNC9oZWFkZXIgZ2FsbGVyeS9oZWFkZXIgMS5qcGc/aWQ9NTA4JndpZHRoPTE2MDBkAgIPZBYCZg8VAwAAPi9kb2NzL2J1aWxkaW5nLzQvaGVhZGVyIGdhbGxlcnkvaGVhZGVyIDIuanBnP2lkPTUwOSZ3aWR0aD0xNjAwZAIDD2QWAmYPFQMAADYvZG9jcy9idWlsZGluZy8xL2hlYWRlci9oZWFkZXIgMS5qcGc/aWQ9NDk3JndpZHRoPTE2MDBkAgQPZBYCZg8VAwAANi9kb2NzL2J1aWxkaW5nLzEvaGVhZGVyL2hlYWRlciAyLmpwZz9pZD00OTgmd2lkdGg9MTYwMGQCBQ9kFgJmDxUDAABDL2RvY3MvYnVpbGRpbmcvMi9oZWFkZXIgZ2FsbGVyeS9jcmFtZXIgaGVhZGVyLmpwZz9pZD01MDUmd2lkdGg9MTYwMGQCBg9kFgJmDxUDAABHL2RvY3MvYnVpbGRpbmcvMy9oZWFkZXIgZ2FsbGVyeS92ZXJlbGxlbiBoZWFkZXIgMi5qcGc/aWQ9NTA2JndpZHRoPTE2MDBkAgcPZBYCZg8VAwAARS9kb2NzL2J1aWxkaW5nLzMvaGVhZGVyIGdhbGxlcnkvdmVyZWxsZW4gaGVhZGVyLmpwZz9pZD01MDcmd2lkdGg9MTYwMGQCBw9kFgJmDxYCHwAF8gg8dWwgY2xhc3M9J25hdiBuYXZiYXItbmF2IGRpc3RyaWN0LXRvcC1uYXYnID48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy8nICB0aXRsZT0nSG9tZSc+SG9tZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0Rpc3RyaWN0bmV3c0FydGljbGVzLmFzcHgnICB0aXRsZT0nRGlzdHJpY3QgTmV3cyc+RGlzdHJpY3QgTmV3czwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2NhbE1vbnRoVmlldy5hc3B4P3M9MCcgIHRpdGxlPSdDYWxlbmRhcic+Q2FsZW5kYXI8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9hZG1pbmlzdHJhdGlvbi5hc3B4JyAgdGl0bGU9J0RlcGFydG1lbnRzJz5EZXBhcnRtZW50czwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2Rpc3RyaWN0Qm9hcmRFZC5hc3B4JyAgdGl0bGU9J0JvYXJkIG9mIEVkdWNhdGlvbic+Qm9hcmQgb2YgRWR1Y2F0aW9uPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvbGlua3NGb3Jtcy5hc3B4JyAgdGl0bGU9J0Zvcm1zICZhbXA7IExpbmtzJz5Gb3JtcyAmIExpbmtzPC9hPjwvbGk+PGxpIGNsYXNzPSdkcm9wZG93bic+PGEgaHJlZj0nIycgY2xhc3M9J2Ryb3Bkb3duLXRvZ2dsZScgZGF0YS10b2dnbGU9J2Ryb3Bkb3duJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0FFUi9CaWRzL1JGUCYjMzk7cyc+QUVSL0JpZHMvUkZQJ3MgIDxzdHJvbmcgY2xhc3M9J2NhcmV0Jz48L3N0cm9uZz48L2E+PHVsIGNsYXNzPSdkcm9wZG93bi1tZW51Jz48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzYwJyB0YXJnZXQ9J19ibGFuaycgdGl0bGU9J0N1cnJlbnQgQmlkcyc+Q3VycmVudCBCaWRzPC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvY29udGVudC9yZnAnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nT2xkZXIgUkZQcyc+T2xkZXIgUkZQczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNjYnICB0aXRsZT0nQUVSIFJlcG9ydHMnPkFFUiBSZXBvcnRzPC9hPjwvbGk+PC91bD48L2xpPjwvdWw+ZAIJD2QWAgIBD2QWAgIBD2QWAgICD2QWBAIDDxYCHgdWaXNpYmxlaGQCBQ8WAh8BAgNkAgsPZBYGAgEPZBYCAgEPZBYCZg8WAh8ABe0OPHVsIGNsYXNzPSduYXYgbmF2YmFyLW5hdiBsZWZ0LW5hdicgPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nLycgIHRpdGxlPSdIb21lJz48aSBjbGFzcz0iZmEgZmEtaG9tZSI+PC9pPkhvbWU8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9EaXN0cmljdG5ld3NBcnRpY2xlcy5hc3B4JyAgdGl0bGU9J0Rpc3RyaWN0IE5ld3MnPkRpc3RyaWN0IE5ld3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9jYWxNb250aFZpZXcuYXNweD9zPTAnICB0aXRsZT0nRGlzdHJpY3QgRXZlbnRzJz5EaXN0cmljdCBFdmVudHM8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9zdXBlck1zZy5hc3B4JyAgdGl0bGU9J1N1cGVyaW50ZW5kZW50JiMzOTtzIE1lc3NhZ2UnPlN1cGVyaW50ZW5kZW50J3MgTWVzc2FnZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0naHR0cDovL2NoYXJ0d2VsbHNrMTIuY29tcGFzcy11c2EuY29tL0Vzc2V4dmlsbGVIYW1wdG9uUHVibGljU2Nob29sc0RpbmluZycgdGFyZ2V0PSdfYmxhbmsnIHRpdGxlPSdGb29kIFNlcnZpY2UnPkZvb2QgU2VydmljZTwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvNjgnIHRhcmdldD0nX2JsYW5rJyB0aXRsZT0nQ29tbXVuaXR5IEVucmljaG1lbnQnPkNvbW11bml0eSBFbnJpY2htZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvZGlzdHJpY3RCb2FyZEVkLmFzcHgnICB0aXRsZT0nQm9hcmQgb2YgRWR1Y2F0aW9uJz5Cb2FyZCBvZiBFZHVjYXRpb248L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9zY2hvb2xfc3RhZmYuYXNweD9zY2hvb2xJRD0xJyAgdGl0bGU9J1N0YWZmIERpcmVjdG9yeSc+U3RhZmYgRGlyZWN0b3J5PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPSdodHRwOi8vZWhwc2R1a2VzLmNvbS8nICB0aXRsZT0nQXRobGV0aWNzJz5BdGhsZXRpY3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9EaXN0cmljdEdhbGxlcnkuYXNweCcgIHRpdGxlPSdQaG90byBHYWxsZXJpZXMnPlBob3RvIEdhbGxlcmllczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2VtcGxveW1lbnQnICB0aXRsZT0nRW1wbG95bWVudCc+RW1wbG95bWVudDwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL2xpbmtzRm9ybXMuYXNweCcgIHRpdGxlPSdGb3JtcyAmYW1wOyBMaW5rcyc+Rm9ybXMgJiBMaW5rczwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvc3RhZmZsaW5rcycgIHRpdGxlPSdTdGFmZiBMaW5rcyc+U3RhZmYgTGlua3M8L2E+PC9saT48bGkgY2xhc3M9J3dpdGhvdXQtaW1hZ2UnPjxhIGhyZWY9Jy9Db250ZW50LzEyMicgIHRpdGxlPSdJbnRlZ3JhdGVkIFBlc3RpY2lkZSBNYW5hZ2VtZW50Jz5JbnRlZ3JhdGVkIFBlc3RpY2lkZSBNYW5hZ2VtZW50PC9hPjwvbGk+PGxpIGNsYXNzPSd3aXRob3V0LWltYWdlJz48YSBocmVmPScvdXNlcmZpbGVzLzMvbXkgZmlsZXMvZWR1Y2F0b3JfZXZhbHVhdGlvbl8yMDE2LnBkZj9pZD0xNDUyJyAgdGl0bGU9J0VkdWNhdG9yIEV2YWx1YXRpb24gUmVxdWlyZW1lbnRzJz5FZHVjYXRvciBFdmFsdWF0aW9uIFJlcXVpcmVtZW50czwvYT48L2xpPjxsaSBjbGFzcz0nd2l0aG91dC1pbWFnZSc+PGEgaHJlZj0nL0NvbnRlbnQvMTI2JyAgdGl0bGU9J0FubnVhbCBFZHVjYXRpb24gUmVwb3J0cyc+QW5udWFsIEVkdWNhdGlvbiBSZXBvcnRzPC9hPjwvbGk+PC91bD5kAgMPZBYCAgEPZBYGZg8WAh8ABQZWaWRlb3NkAgEPFgIfAAWxETxwPjxhIGhyZWY9Ii91c2VyZmlsZXMvOC9teSBmaWxlcy9zZXB0ZW1iZXIgMjAxNy5wZGY/aWQ9NDIzOCIgdGFyZ2V0PSJfYmxhbmsiPjxzcGFuIHN0eWxlPSJjb2xvcjogcmdiKDAsIDAsIDI1NSk7Ij48c3BhbiBzdHlsZT0iZm9udC1zaXplOiAxOHB4OyI+PHN0cm9uZz5ESVNUSU5HVUlTSEVEIERVS0UgUkVDSVBJRU5UUyA8L3N0cm9uZz48L3NwYW4+PC9zcGFuPjwvYT48L3A+DQoNCjxwPjxzcGFuIHN0eWxlPSJmb250LXNpemU6MTZweDsiPjx1PjxzdHJvbmc+RURVQ0FURTwvc3Ryb25nPjwvdT48L3NwYW4+PC9wPg0KDQo8cCBjbGFzcz0idmlkZW9wbGF5ZXIiIGRhdGEtaGVpZ2h0PSIyNjYiIGRhdGEtcGxheWxpc3Q9Im51bGwiIGRhdGEtd2lkdGg9IjQ3NSIgaGVpZ2h0PSIyNjZweCIgc3R5bGU9ImhlaWdodDo0MDdweDsiIHdpZHRoPSI0NzVweCI+DQo8dmlkZW8gY2xhc3M9InZpZGVvLWpzIHZqcy1kZWZhdWx0LXNraW4iIGNvbnRyb2xzPSJjb250cm9scyIgaWQ9Ijc5ZTJiNWZhLTViOGMtNDYzYS1hOTUyLTkwMWVkNTQyZjg4NyIgcG9zdGVyPSJodHRwOi8vdmlkZW8uY2RuLnNjaG9vbHBvaW50ZS5jb20vTUlfRXNzZXh2aWxsZUhhbXB0b25QUyUyZjIwMTclMmYwOSUyZmltYWdlcyUyZjc5ZTJiNWZhLTViOGMtNDYzYS1hOTUyLTkwMWVkNTQyZjg4NzAwMDAxLnBuZyIgcHJlbG9hZD0ibm9uZSI+PHNvdXJjZSBzcmM9Imh0dHA6Ly92aWRlby5jZG4uc2Nob29scG9pbnRlLmNvbS9NSV9Fc3NleHZpbGxlSGFtcHRvblBTJTJmMjAxNyUyZjA5JTJmdmlkZW9zJTJmNzllMmI1ZmEtNWI4Yy00NjNhLWE5NTItOTAxZWQ1NDJmODg3Lm1wNCIgdHlwZT0idmlkZW8vbXA0IiAvPjwvdmlkZW8+DQo8L3A+DQoNCjxwPiZuYnNwOzwvcD4NCg0KPHA+PHNwYW4gc3R5bGU9ImZvbnQtc2l6ZToxNnB4OyI+PHU+PHN0cm9uZz5SRUxBVEU8L3N0cm9uZz48L3U+PC9zcGFuPjwvcD4NCg0KPHAgY2xhc3M9InZpZGVvcGxheWVyIiBkYXRhLWhlaWdodD0iMjY2IiBkYXRhLXBsYXlsaXN0PSJudWxsIiBkYXRhLXdpZHRoPSI0NzUiIGhlaWdodD0iMjY2cHgiIHN0eWxlPSJoZWlnaHQ6NDA3cHg7IiB3aWR0aD0iNDc1cHgiPg0KPHZpZGVvIGNsYXNzPSJ2aWRlby1qcyB2anMtZGVmYXVsdC1za2luIiBjb250cm9scz0iY29udHJvbHMiIGlkPSIzYjJlNzk1NC1mMmZiLTRkZjEtYjQ2Ny01ZmRmNTZlN2M1NzYiIHBvc3Rlcj0iaHR0cDovL3ZpZGVvLmNkbi5zY2hvb2xwb2ludGUuY29tL01JX0Vzc2V4dmlsbGVIYW1wdG9uUFMlMmYyMDE3JTJmMDklMmZpbWFnZXMlMmYzYjJlNzk1NC1mMmZiLTRkZjEtYjQ2Ny01ZmRmNTZlN2M1NzYwMDAwMi5wbmciIHByZWxvYWQ9Im5vbmUiPjxzb3VyY2Ugc3JjPSJodHRwOi8vdmlkZW8uY2RuLnNjaG9vbHBvaW50ZS5jb20vTUlfRXNzZXh2aWxsZUhhbXB0b25QUyUyZjIwMTclMmYwOSUyZnZpZGVvcyUyZjNiMmU3OTU0LWYyZmItNGRmMS1iNDY3LTVmZGY1NmU3YzU3Ni5tcDQiIHR5cGU9InZpZGVvL21wNCIgLz48L3ZpZGVvPg0KPC9wPg0KDQo8cD4mbmJzcDs8L3A+DQoNCjxwPjxzcGFuIHN0eWxlPSJmb250LXNpemU6MTZweDsiPjx1PjxzdHJvbmc+SU5OT1ZBVEU8L3N0cm9uZz48L3U+PC9zcGFuPjwvcD4NCg0KPHAgY2xhc3M9InZpZGVvcGxheWVyIiBkYXRhLWhlaWdodD0iMjY2IiBkYXRhLXBsYXlsaXN0PSJudWxsIiBkYXRhLXdpZHRoPSI0NzUiIGhlaWdodD0iMjY2cHgiIHN0eWxlPSJoZWlnaHQ6NDA3cHg7IiB3aWR0aD0iNDc1cHgiPg0KPHZpZGVvIGNsYXNzPSJ2aWRlby1qcyB2anMtZGVmYXVsdC1za2luIiBjb250cm9scz0iY29udHJvbHMiIGlkPSI1YjJkZjM0ZC1mMTdhLTRiNDUtOWRhNy1jZjZmOTg5ZWFkZjIiIHBvc3Rlcj0iaHR0cDovL3ZpZGVvLmNkbi5zY2hvb2xwb2ludGUuY29tL01JX0Vzc2V4dmlsbGVIYW1wdG9uUFMlMmYyMDE3JTJmMDklMmZpbWFnZXMlMmY1YjJkZjM0ZC1mMTdhLTRiNDUtOWRhNy1jZjZmOTg5ZWFkZjIwMDAwMS5wbmciIHByZWxvYWQ9Im5vbmUiPjxzb3VyY2Ugc3JjPSJodHRwOi8vdmlkZW8uY2RuLnNjaG9vbHBvaW50ZS5jb20vTUlfRXNzZXh2aWxsZUhhbXB0b25QUyUyZjIwMTclMmYwOSUyZnZpZGVvcyUyZjViMmRmMzRkLWYxN2EtNGI0NS05ZGE3LWNmNmY5ODllYWRmMi5tcDQiIHR5cGU9InZpZGVvL21wNCIgLz48L3ZpZGVvPg0KPC9wPg0KDQo8cD4mbmJzcDs8L3A+DQoNCjxwPiZuYnNwOzwvcD4NCg0KPHA+Jm5ic3A7PC9wPg0KDQo8cD4mbmJzcDs8L3A+ZAIDDw8WAh8DBRsvZmVhdHVyZUNvbnRlbnQuYXNweD9yYW5rPTFkZAIFD2QWBAIBD2QWBmYPFgIfAQIFFgoCAQ9kFgJmDxUHBTIxNjU3E1NlcCAxOS08YnIgLz5PY3QgMDVaL2NhbGVuZGFyV2Vla1ZpZXcuYXNweD9zY2hvb2xzPTAsMSwyLDMsNCw1JnNjaG9vbGlkPTAmdHlwZXM9JmV2ZW50SUQ9MjE2NTcmdmlld0RhdGU9U2VwIDE5CkZ1bmRyYWlzZXIKRnVuZHJhaXNlcgAAZAICD2QWAmYPFQcFMjE0MjYGU2VwIDIwWi9jYWxlbmRhcldlZWtWaWV3LmFzcHg/c2Nob29scz0wLDEsMiwzLDQsNSZzY2hvb2xpZD0wJnR5cGVzPSZldmVudElEPTIxNDI2JnZpZXdEYXRlPVNlcCAyMBxCb3lzJyBUZW5uaXMgdnMuIEZyYW5rZW5tdXRoHEJveXMnIFRlbm5pcyB2cy4gRnJhbmtlbm11dGg2QEdhcmJlciBIaWdoIFNjaG9vbCwgMjEzIFBpbmUgU3QsIEVzc2V4dmlsbGUsIE1JIDQ4NzMyFzQ6MDAgUE0gJm1kYXNoOyA0OjAwIFBNZAIDD2QWAmYPFQcFMjE0MjcGU2VwIDIwWi9jYWxlbmRhcldlZWtWaWV3LmFzcHg/c2Nob29scz0wLDEsMiwzLDQsNSZzY2hvb2xpZD0wJnR5cGVzPSZldmVudElEPTIxNDI3JnZpZXdEYXRlPVNlcCAyMBpHaXJscycgU3dpbSB2cy4gVHJpIENpdGllcxpHaXJscycgU3dpbSB2cy4gVHJpIENpdGllc0pAU2FnaW5hdyBWYWxsZXkgU3RhdGUgVW5pdmVyc2l0eSwgNzQwMCBCYXkgUmQsIFVuaXZlcnNpdHkgQ2VudGVyLCBNSSA0ODcxMBc1OjAwIFBNICZtZGFzaDsgNTowMCBQTWQCBA9kFgJmDxUHBTIxNzE5BlNlcCAyMFovY2FsZW5kYXJXZWVrVmlldy5hc3B4P3NjaG9vbHM9MCwxLDIsMyw0LDUmc2Nob29saWQ9MCZ0eXBlcz0mZXZlbnRJRD0yMTcxOSZ2aWV3RGF0ZT1TZXAgMjAiRnJlc2htYW4gVm9sbGV5YmFsbCB2cy4gSm9obiBHbGVubiJGcmVzaG1hbiBWb2xsZXliYWxsIHZzLiBKb2huIEdsZW5uO0BKb2huIEdsZW5uIEhpZ2ggU2Nob29sLCAzMjAxIEtpZXNlbCBSZCwgQmF5IENpdHksIE1JIDQ4NzA2FzU6MzAgUE0gJm1kYXNoOyA1OjMwIFBNZAIFD2QWAmYPFQcFMjEzNjAGU2VwIDIwWi9jYWxlbmRhcldlZWtWaWV3LmFzcHg/c2Nob29scz0wLDEsMiwzLDQsNSZzY2hvb2xpZD0wJnR5cGVzPSZldmVudElEPTIxMzYwJnZpZXdEYXRlPVNlcCAyMBpKViBGb290YmFsbCB2cy4gQnJpZGdlcG9ydBpKViBGb290YmFsbCB2cy4gQnJpZGdlcG9ydDZAR2FyYmVyIEhpZ2ggU2Nob29sLCAyMTMgUGluZSBTdCwgRXNzZXh2aWxsZSwgTUkgNDg3MzIXNjowMCBQTSAmbWRhc2g7IDY6MDAgUE1kAgQPDxYEHwMFRS9jYWxlbmRhcldlZWtWaWV3LmFzcHg/c2Nob29scz0wJnNjaG9vbGlkPTAmdHlwZXM9JnZpZXdEYXRlPTkvMjAvMjAxOB8ABQ9WaWV3IEFsbCBFdmVudHNkZAIGDw8WAh8DBSEvY2FsTW9udGhWaWV3LmFzcHg/cz0wJnk9MjAxOCZtPTlkZAIDD2QWBAIBDzwrAAoBAA8WCB4NRGF5TmFtZUZvcm1hdAsqJ1N5c3RlbS5XZWIuVUkuV2ViQ29udHJvbHMuRGF5TmFtZUZvcm1hdAIeDU5leHRNb250aFRleHQFLz4+PHNwYW4gY2xhc3M9J29ic2N1cmUnPkdvIHRvIG5leHQgbW9udGg8L3NwYW4+Hg1QcmV2TW9udGhUZXh0BTM8PDxzcGFuIGNsYXNzPSdvYnNjdXJlJz5HbyB0byBwcmV2aW91cyBtb250aDwvc3Bhbj4eAlNEFgEGAAApAowe1ghkZAIDDw8WBh4GVGFyZ2V0BQZfYmxhbmsfAAUSVmlldyBGdWxsIENhbGVuZGFyHwMFJS9jYWxNb250aFZpZXcuYXNweD9zPTAmeT0yMDE4Jm09OSZ0PTBkZAIPD2QWDgIBDxYCHglpbm5lcmh0bWwFIUVzc2V4dmlsbGUtSGFtcHRvbiBQdWJsaWMgU2Nob29sc2QCAw8WAh8KBSUzMDMgUGluZSBTdC48YnIvPkVzc2V4dmlsbGUsIE1JIDQ4NzMyZAIFDxYCHwIFPmh0dHA6Ly9tYXBzLmdvb2dsZS5jb20vbWFwcz9xPTMwMyBQaW5lIFN0LitFc3NleHZpbGxlK01JKzQ4NzMyZAIHD2QWAgIBDxYCHwoFE1Bob25lOiA5ODktODk0LTk3MDBkAgsPZBYCAgEPFgIfCgURRmF4OiA5ODktODk0LTk3MDVkAg0PFgIfBGhkAg8PZBYCZg8WAh8BAgIWBGYPZBYCZg8VBQsvbG9naW4uYXNweCtFc3NleHZpbGxlLUhhbXB0b24gUHVibGljIFNjaG9vbHMgQ01TIExvZ2luBV9zZWxmJjxzcGFuIGNsYXNzPSdvYnNjdXJlJz5DTVMgTG9naW48L3NwYW4+DWZhIGZhLXNpZ24taW5kAgEPZBYCZg8VBRQvaW50cmFuZXRfbG9naW4uYXNweCpFc3NleHZpbGxlLUhhbXB0b24gUHVibGljIFNjaG9vbHMgSW50cmFuZXQFX3NlbGYlPHNwYW4gY2xhc3M9J29ic2N1cmUnPkludHJhbmV0PC9zcGFuPg1mYSBmYS1zaXRlbWFwZGS9bjo5BCluhp7rQg8UD5fTn40kIw==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/WebResource.axd?d=ciQs-AUcGllikzvJxOn4IY9qdpn5WXYfT_PMnTK91Xt8dksb258BJxYsmn4olEPTocq6JTsZH-_-9MV4tnJ7755rEvo1&amp;t=635875512900000000" type="text/javascript"></script>
+
+        
+
+<a id="skip-link" class="obscure" href="#start-content">Skip to main content</a>
+
+
+
+
+
+
+
+        <div class="headerback">
+            <header id="site-head">
+                
+    
+        
+
+<script>
+
+	$(document).ready(function () {
+		var menuAnchorsRight = $('ul.nav.navbar-nav.district-top-right > li > a');
+		var cntRight = menuAnchorsRight.length;
+
+		$('ul.nav.navbar-nav.district-top-right > li').css({
+			"width": (100 / cntRight) + "%"
+		});
+
+		var menuAnchorsLeft = $('ul.nav.navbar-nav.district-top-left > li > a');
+		var cntLeft = menuAnchorsLeft.length;
+
+		$('ul.nav.navbar-nav.district-top-left > li').css({
+			"width": (100 / cntLeft) + "%"
+		});
+
+		var menuAnchors = $('ul.nav.navbar-nav.district-top-nav > li > a');
+		var cnt = menuAnchors.length;
+
+		$('ul.nav.navbar-nav.district-top-nav > li').css({
+			"width": (100 / cnt) + "%"
+		});
+
+	});
+</script>
+<div class="schoolNameRow">
+	<div class="container">
+		<div class="row">
+            			<div class="col-lg-12 col-md-12 col-sm-12">
+                            <span id="ctl00_ctl00_header_header_ctl00_SchoolName" class="schoolName">Essexville-Hampton Public Schools</span>
+                            		</div>
+	</div>
+</div>
+</div>
+<div class="NavBack hidden-lg hidden-md hidden-sm">
+	<div class="container">
+		<div class="row">
+			<div class="navigation">
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand hidden-lg hidden-md hidden-sm" href="#">
+							Essexville-Hampton PS
+						</a>
+					</div>
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav district-top-left-nav-links"><li class="without-image"><a href="/" title="Home">Home</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="District">District  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/36" target="_blank" title="Administrative Staff">Administrative Staff</a></li><li class="without-image"><a href="/employment" title="Employment">Employment</a></li><li class="without-image"><a href="https://dashboard.eidexinsights.com/Essexville-Hampton/" target="_blank" title="Budget Transparency">Budget Transparency</a></li><li class="without-image"><a href="https://drive.google.com/open?id=0B8Lwg-FR2xOjaHpFYTZmVjd6TUk" target="_blank" title="District Safety Drills">District Safety Drills</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Schools">Schools  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/1/home" target="_blank" title="Garber High School">Garber High School</a></li><li class="without-image"><a href="/2/home" target="_blank" title="Cramer Junior High">Cramer Junior High</a></li><li class="without-image"><a href="/3/home" target="_blank" title="Verellen Elementary">Verellen Elementary</a></li><li class="without-image"><a href="/4/home" target="_blank" title="Bush Elementary">Bush Elementary</a></li></ul></li></ul>
+
+						<ul class="nav navbar-nav district-top-right-nav-links"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Parents">Parents  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/70" title="School Supply Lists">School Supply Lists</a></li><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" title="Skyward">Skyward</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" target="_blank" title="Food Service">Food Service</a></li><li class="without-image"><a href="/Content/38" title="Bush Preschool and Daycare Information">Bush Preschool and Daycare Information</a></li><li class="without-image"><a href="http://www.parchment.com/" target="_blank" title="Parchment">Parchment</a></li><li class="without-image"><a href="https://www.protectmichild.com/" target="_blank" title="Protect MI Child">Protect MI Child</a></li><li class="without-image"><a href="http://www.arbookfind.com" target="_blank" title="AR Bookfind">AR Bookfind</a></li><li class="without-image"><a href="/userfiles/3/my files/parent mtg presentation 2017.pdf?id=1122" target="_blank" title="2017 Washington DC Trip Info (Cramer 8th Grade)">2017 Washington DC Trip Info (Cramer 8th Grade)</a></li><li class="without-image"><a href="/userfiles/3/my files/opt out form.pdf?id=4294" target="_blank" title="Media Opt-Out Form">Media Opt-Out Form</a></li><li class="without-image"><a href="/userfiles/3/my files/2017-18 media opt out letter.pdf?id=4295" target="_blank" title="Media Opt-Out Letter">Media Opt-Out Letter</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Students">Students  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" title="Skyward">Skyward</a></li><li class="without-image"><a href="https://www.google.com/a/e-hps.net/" target="_blank" title="Email">Email</a></li><li class="without-image"><a href="https://ehps.illuminatehc.com/" target="_blank" title="Illuminate">Illuminate</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" title="Food Service">Food Service</a></li><li class="without-image"><a href="https://clever.com/oauth/sis/login?target=NTdiYjNkNjEzNDljZmQwMTAwMDAwNzUx%3BNGM2M2MxY2Y2MjNkY2U4MmNhYWM%3D%3BaHR0cHM6Ly9jbGV2ZXIuY29tL2luL2F1dGhfY2FsbGJhY2s%3D%3BODViMWYyOTM4ODhjMTRlNDIyZDYyNDJmNDk2NmU1MDdlMjgzNmQ5MTA3MGM3MDI1Nzg1Njg5ZTk5ZmYxZWE2ZQ%3D%3D%3BY29kZQ%3D%3D&amp;skip=1&amp;school_name=&amp;default_badge=" target="_blank" title="Clever For Students">Clever For Students</a></li><li class="without-image"><a href="/Content/152" title="KDG Music Program">KDG Music Program</a></li><li class="without-image"><a href="/Content/150" title="1st Grade Music Program">1st Grade Music Program</a></li><li class="without-image"><a href="/Content/148" title="2nd Grade Program">2nd Grade Program</a></li><li class="without-image"><a href="/content/54" target="_blank" title="3rd Grade Concert">3rd Grade Concert</a></li><li class="without-image"><a href="/Content/146" target="_blank" title="3rd and 4th Grade Online Recorder Karate">3rd and 4th Grade Online Recorder Karate</a></li><li class="without-image"><a href="/Content/144" target="_blank" title="4th Grade Spring Program">4th Grade Spring Program</a></li><li class="without-image"><a href="http://inqwizit.oaisd.org" target="_blank" title="Inqwizit">Inqwizit</a></li><li class="without-image"><a href="http://vlc.ent.sirsi.net/client/en_US/garber" title="Bay County Library Garber Site">Bay County Library Garber Site</a></li><li class="without-image"><a href="/Content/46" title="Garber Guidance Department">Garber Guidance Department</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Alexandria Library Catalog">Alexandria Library Catalog  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="http://ehbush.goalexandria.com/researcher" target="_blank" title="Bush Library">Bush Library</a></li><li class="without-image"><a href="http://ehverellen.goalexandria.com/researcher" target="_blank" title="Verellen Library">Verellen Library</a></li><li class="without-image"><a href="http://ehcramer.goalexandria.com/researcher" target="_blank" title="Cramer Library">Cramer Library</a></li><li class="without-image"><a href="http://ehgarber.goalexandria.com/researcher" target="_blank" title="Garber Library">Garber Library</a></li></ul></li><li class="without-image"><a href="https://hosted6.renlearn.com/133247/" target="_blank" title="Accelerated Reader">Accelerated Reader</a></li><li class="without-image"><a href="http://e-hps.mi.safeschools.com/login" title="Safe Schools Training">Safe Schools Training</a></li><li class="without-image"><a href="https://classroom.google.com" target="_blank" title="Google Classroom">Google Classroom</a></li><li class="without-image"><a href="http://www.arbookfind.com" target="_blank" title="AR Bookfind">AR Bookfind</a></li><li class="without-image"><a href="http://www.e-hps.net/Content/124" target="_blank" title="Choir 7/8">Choir 7/8</a></li><li class="without-image"><a href="/Content/56" title="Music Express">Music Express</a></li><li class="without-image"><a href="http://connected.mcgraw-hill.com/school/n4x8" title="ConnectED-Verellen">ConnectED-Verellen</a></li><li class="without-image"><a href="http://connected.mcgraw-hill.com/school/d3e9" target="_blank" title="ConnectED-Cramer">ConnectED-Cramer</a></li><li class="without-image"><a href="https://play.dreambox.com/login/zzr6/bhen" target="_blank" title="DreamBox">DreamBox</a></li><li class="without-image"><a href="https://sites.google.com/e-hps.net/ehtechlinks/home" target="_blank" title="E-H Technology Links K-5">E-H Technology Links K-5</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Staff">Staff  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Duke Digital Resources">Duke Digital Resources  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/78" target="_blank" title="Duke Digital Resources Home">Duke Digital Resources Home</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Curriculum">Curriculum  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/116" title="Curriculum Home">Curriculum Home</a></li><li class="without-image"><a href="/Content/108" target="_blank" title="K-5">K-5</a></li><li class="without-image"><a href="/Content/110" title="6-12">6-12</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Training">Training  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/114" title="Training Home">Training Home</a></li><li class="without-image"><a href="/Content/82" target="_blank" title="Skyward">Skyward</a></li><li class="without-image"><a href="/Content/90" title="Classroom Tech">Classroom Tech</a></li><li class="without-image"><a href="/Content/106" title="Google Apps">Google Apps</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Tech Resources">Tech Resources  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/118" title="Tech Resources Home">Tech Resources Home</a></li><li class="without-image"><a href="https://plus.google.com/communities/106270009828914695726" title="Google+">Google+</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Tech Coaches">Tech Coaches  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/120" title="Tech Coaches Home">Tech Coaches Home</a></li><li class="without-image"><a href="/Content/kunio" title="Kunio">Kunio</a></li><li class="without-image"><a href="/Content/96" title="Pat">Pat</a></li><li class="without-image"><a href="/Content/98" title="Mike">Mike</a></li></ul></li><li class="without-image"><a href="/Content/102" title="DTAT">DTAT</a></li></ul></li></ul></li><li class="without-image"><a href="https://selfservice.baisd.net/eSuite_EHP/Websites.HR.Portal/Default.aspx?ReturnUrl=%2FeSuite_EHP%2FWebsites.HR.Portal%2F" target="_blank" title="New World eSuite HR Portal">New World eSuite HR Portal</a></li><li class="without-image"><a href="https://sso.mapnwea.org/auth/login" target="_blank" title="NWEA">NWEA</a></li><li class="without-image"><a href="/content/stafflinks" title="Staff Links">Staff Links</a></li><li class="without-image"><a href="https://www.google.com/a/e-hps.net/" target="_blank" title="Email">Email</a></li><li class="without-image"><a href="https://ehps.illuminateed.com" target="_blank" title="Illuminate">Illuminate</a></li><li class="without-image"><a href="https://michigan.kready.org/login" target="_blank" title="KRA-Michigan">KRA-Michigan</a></li><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" target="_blank" title="Skyward">Skyward</a></li><li class="without-image"><a href="https://live.stagessoftware.com" title="Stages Login">Stages Login</a></li><li class="without-image"><a href="http://helpdesk.e-hps.net/portal" target="_blank" title="Helpdesk (Submit a Ticket)">Helpdesk (Submit a Ticket)</a></li><li class="without-image"><a href="http://helpdesk.e-hps.net/pro_users/login" target="_blank" title="Helpdesk for Admins">Helpdesk for Admins</a></li><li class="without-image"><a href="https://baisd400.baisd.net/XDHPI0207/PIMAIN.MBR/PIMAIN?APID=PI0207&amp;LicVer=&amp;LicCli=&amp;Logon=E&amp;PwdChg=Y&amp;User1=UpperCase%3Dtrue&amp;User2=&amp;User3=&amp;User4=&amp;User5=&amp;WinParm=toolbar=0,location=0,resizable=1,scrollbars=1,status=1" target="_blank" title="CMT">CMT</a></li><li class="without-image"><a href="https://go2.pcgeducation.com/miessexvillehampton" target="_blank" title="EasyIEP">EasyIEP</a></li><li class="without-image"><a href="https://www.willsub.com/" target="_blank" title="Willsub">Willsub</a></li><li class="without-image"><a href="https://dibels.net/" target="_blank" title="Dibels">Dibels</a></li><li class="without-image"><a href="http://www.learn360.com/index.aspx" target="_blank" title="Learn360">Learn360</a></li><li class="without-image"><a href="http://www.solutionwhere.com/glb/cw/main.asp" title="BAISD Coursewhere Login">BAISD Coursewhere Login</a></li><li class="without-image"><a href="https://asp.schoolmessenger.com/essexvillehamptonsd/index.php" target="_blank" title="School Messenger">School Messenger</a></li><li class="without-image"><a href="http://e-hps.mi.safeschools.com/login" title="Mandatory Staff Training (Safe Schools)">Mandatory Staff Training (Safe Schools)</a></li></ul></li></ul>
+
+						<ul class="nav navbar-nav district-top-nav-links"><li class="without-image"><a href="/" title="Home">Home</a></li><li class="without-image"><a href="/DistrictnewsArticles.aspx" title="District News">District News</a></li><li class="without-image"><a href="/Calendar/0" title="Calendar">Calendar</a></li><li class="without-image"><a href="/Administration" title="Departments">Departments</a></li><li class="without-image"><a href="/districtBoardEd.aspx" title="Board of Education">Board of Education</a></li><li class="without-image"><a href="/District/Links-Forms" title="Forms &amp; Links">Forms &amp; Links</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="AER/Bids/RFP's">AER/Bids/RFP's  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/60" target="_blank" title="Current Bids">Current Bids</a></li><li class="without-image"><a href="/content/rfp" target="_blank" title="Older RFPs">Older RFPs</a></li><li class="without-image"><a href="/Content/66" title="AER Reports">AER Reports</a></li></ul></li></ul>
+
+						<ul class="nav navbar-nav left-nav-links"><li class="without-image"><a href="/" title="Home"><i class="fa fa-home"></i>Home</a></li><li class="without-image"><a href="/DistrictnewsArticles.aspx" title="District News">District News</a></li><li class="without-image"><a href="/Calendar/0" title="District Events">District Events</a></li><li class="without-image"><a href="/Superintendent" title="Superintendent's Message">Superintendent's Message</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" target="_blank" title="Food Service">Food Service</a></li><li class="without-image"><a href="/Content/68" target="_blank" title="Community Enrichment">Community Enrichment</a></li><li class="without-image"><a href="/districtBoardEd.aspx" title="Board of Education">Board of Education</a></li><li class="without-image"><a href="/1/Staff" title="Staff Directory">Staff Directory</a></li><li class="without-image"><a href="http://ehpsdukes.com/" title="Athletics">Athletics</a></li><li class="without-image"><a href="/Gallery" title="Photo Galleries">Photo Galleries</a></li><li class="without-image"><a href="/employment" title="Employment">Employment</a></li><li class="without-image"><a href="/District/Links-Forms" title="Forms &amp; Links">Forms &amp; Links</a></li><li class="without-image"><a href="/Content/stafflinks" title="Staff Links">Staff Links</a></li><li class="without-image"><a href="/Content/122" title="Integrated Pesticide Management">Integrated Pesticide Management</a></li><li class="without-image"><a href="/userfiles/3/my files/educator_evaluation_2016.pdf?id=1452" title="Educator Evaluation Requirements">Educator Evaluation Requirements</a></li><li class="without-image"><a href="/Content/126" title="Annual Education Reports">Annual Education Reports</a></li></ul>
+
+					</div>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="nav-logo-container hidden-xs">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<div class="row">
+					<ul class="nav navbar-nav district-top-left"><li class="without-image" style="width: 33.3333%;"><a href="/" title="Home">Home</a></li><li class="dropdown" style="width: 33.3333%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="District">District  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/36" target="_blank" title="Administrative Staff">Administrative Staff</a></li><li class="without-image"><a href="/employment" title="Employment">Employment</a></li><li class="without-image"><a href="https://dashboard.eidexinsights.com/Essexville-Hampton/" target="_blank" title="Budget Transparency">Budget Transparency</a></li><li class="without-image"><a href="https://drive.google.com/open?id=0B8Lwg-FR2xOjaHpFYTZmVjd6TUk" target="_blank" title="District Safety Drills">District Safety Drills</a></li></ul></li><li class="dropdown" style="width: 33.3333%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Schools">Schools  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/1/home" target="_blank" title="Garber High School">Garber High School</a></li><li class="without-image"><a href="/2/home" target="_blank" title="Cramer Junior High">Cramer Junior High</a></li><li class="without-image"><a href="/3/home" target="_blank" title="Verellen Elementary">Verellen Elementary</a></li><li class="without-image"><a href="/4/home" target="_blank" title="Bush Elementary">Bush Elementary</a></li></ul></li></ul>
+
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<a id="ctl00_ctl00_header_header_ctl00_lnkSchoolHome" class="logo" href="/"><span class="obscure">Essexville-Hampton Public Schools Logo</span></a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4">
+				<div class="row">
+					<ul class="nav navbar-nav district-top-right"><li class="dropdown" style="width: 33.3333%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Parents">Parents  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/70" title="School Supply Lists">School Supply Lists</a></li><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" title="Skyward">Skyward</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" target="_blank" title="Food Service">Food Service</a></li><li class="without-image"><a href="/Content/38" title="Bush Preschool and Daycare Information">Bush Preschool and Daycare Information</a></li><li class="without-image"><a href="http://www.parchment.com/" target="_blank" title="Parchment">Parchment</a></li><li class="without-image"><a href="https://www.protectmichild.com/" target="_blank" title="Protect MI Child">Protect MI Child</a></li><li class="without-image"><a href="http://www.arbookfind.com" target="_blank" title="AR Bookfind">AR Bookfind</a></li><li class="without-image"><a href="/userfiles/3/my files/parent mtg presentation 2017.pdf?id=1122" target="_blank" title="2017 Washington DC Trip Info (Cramer 8th Grade)">2017 Washington DC Trip Info (Cramer 8th Grade)</a></li><li class="without-image"><a href="/userfiles/3/my files/opt out form.pdf?id=4294" target="_blank" title="Media Opt-Out Form">Media Opt-Out Form</a></li><li class="without-image"><a href="/userfiles/3/my files/2017-18 media opt out letter.pdf?id=4295" target="_blank" title="Media Opt-Out Letter">Media Opt-Out Letter</a></li></ul></li><li class="dropdown" style="width: 33.3333%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Students">Students  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" title="Skyward">Skyward</a></li><li class="without-image"><a href="https://www.google.com/a/e-hps.net/" target="_blank" title="Email">Email</a></li><li class="without-image"><a href="https://ehps.illuminatehc.com/" target="_blank" title="Illuminate">Illuminate</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" title="Food Service">Food Service</a></li><li class="without-image"><a href="https://clever.com/oauth/sis/login?target=NTdiYjNkNjEzNDljZmQwMTAwMDAwNzUx%3BNGM2M2MxY2Y2MjNkY2U4MmNhYWM%3D%3BaHR0cHM6Ly9jbGV2ZXIuY29tL2luL2F1dGhfY2FsbGJhY2s%3D%3BODViMWYyOTM4ODhjMTRlNDIyZDYyNDJmNDk2NmU1MDdlMjgzNmQ5MTA3MGM3MDI1Nzg1Njg5ZTk5ZmYxZWE2ZQ%3D%3D%3BY29kZQ%3D%3D&amp;skip=1&amp;school_name=&amp;default_badge=" target="_blank" title="Clever For Students">Clever For Students</a></li><li class="without-image"><a href="/Content/152" title="KDG Music Program">KDG Music Program</a></li><li class="without-image"><a href="/Content/150" title="1st Grade Music Program">1st Grade Music Program</a></li><li class="without-image"><a href="/Content/148" title="2nd Grade Program">2nd Grade Program</a></li><li class="without-image"><a href="/content/54" target="_blank" title="3rd Grade Concert">3rd Grade Concert</a></li><li class="without-image"><a href="/Content/146" target="_blank" title="3rd and 4th Grade Online Recorder Karate">3rd and 4th Grade Online Recorder Karate</a></li><li class="without-image"><a href="/Content/144" target="_blank" title="4th Grade Spring Program">4th Grade Spring Program</a></li><li class="without-image"><a href="http://inqwizit.oaisd.org" target="_blank" title="Inqwizit">Inqwizit</a></li><li class="without-image"><a href="http://vlc.ent.sirsi.net/client/en_US/garber" title="Bay County Library Garber Site">Bay County Library Garber Site</a></li><li class="without-image"><a href="/Content/46" title="Garber Guidance Department">Garber Guidance Department</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Alexandria Library Catalog">Alexandria Library Catalog  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="http://ehbush.goalexandria.com/researcher" target="_blank" title="Bush Library">Bush Library</a></li><li class="without-image"><a href="http://ehverellen.goalexandria.com/researcher" target="_blank" title="Verellen Library">Verellen Library</a></li><li class="without-image"><a href="http://ehcramer.goalexandria.com/researcher" target="_blank" title="Cramer Library">Cramer Library</a></li><li class="without-image"><a href="http://ehgarber.goalexandria.com/researcher" target="_blank" title="Garber Library">Garber Library</a></li></ul></li><li class="without-image"><a href="https://hosted6.renlearn.com/133247/" target="_blank" title="Accelerated Reader">Accelerated Reader</a></li><li class="without-image"><a href="http://e-hps.mi.safeschools.com/login" title="Safe Schools Training">Safe Schools Training</a></li><li class="without-image"><a href="https://classroom.google.com" target="_blank" title="Google Classroom">Google Classroom</a></li><li class="without-image"><a href="http://www.arbookfind.com" target="_blank" title="AR Bookfind">AR Bookfind</a></li><li class="without-image"><a href="http://www.e-hps.net/Content/124" target="_blank" title="Choir 7/8">Choir 7/8</a></li><li class="without-image"><a href="/Content/56" title="Music Express">Music Express</a></li><li class="without-image"><a href="http://connected.mcgraw-hill.com/school/n4x8" title="ConnectED-Verellen">ConnectED-Verellen</a></li><li class="without-image"><a href="http://connected.mcgraw-hill.com/school/d3e9" target="_blank" title="ConnectED-Cramer">ConnectED-Cramer</a></li><li class="without-image"><a href="https://play.dreambox.com/login/zzr6/bhen" target="_blank" title="DreamBox">DreamBox</a></li><li class="without-image"><a href="https://sites.google.com/e-hps.net/ehtechlinks/home" target="_blank" title="E-H Technology Links K-5">E-H Technology Links K-5</a></li></ul></li><li class="dropdown" style="width: 33.3333%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" title="Staff">Staff  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Duke Digital Resources">Duke Digital Resources  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/78" target="_blank" title="Duke Digital Resources Home">Duke Digital Resources Home</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Curriculum">Curriculum  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/116" title="Curriculum Home">Curriculum Home</a></li><li class="without-image"><a href="/Content/108" target="_blank" title="K-5">K-5</a></li><li class="without-image"><a href="/Content/110" title="6-12">6-12</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Training">Training  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/114" title="Training Home">Training Home</a></li><li class="without-image"><a href="/Content/82" target="_blank" title="Skyward">Skyward</a></li><li class="without-image"><a href="/Content/90" title="Classroom Tech">Classroom Tech</a></li><li class="without-image"><a href="/Content/106" title="Google Apps">Google Apps</a></li></ul></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Tech Resources">Tech Resources  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/118" title="Tech Resources Home">Tech Resources Home</a></li><li class="without-image"><a href="https://plus.google.com/communities/106270009828914695726" title="Google+">Google+</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="Tech Coaches">Tech Coaches  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/120" title="Tech Coaches Home">Tech Coaches Home</a></li><li class="without-image"><a href="/Content/kunio" title="Kunio">Kunio</a></li><li class="without-image"><a href="/Content/96" title="Pat">Pat</a></li><li class="without-image"><a href="/Content/98" title="Mike">Mike</a></li></ul></li><li class="without-image"><a href="/Content/102" title="DTAT">DTAT</a></li></ul></li></ul></li><li class="without-image"><a href="https://selfservice.baisd.net/eSuite_EHP/Websites.HR.Portal/Default.aspx?ReturnUrl=%2FeSuite_EHP%2FWebsites.HR.Portal%2F" target="_blank" title="New World eSuite HR Portal">New World eSuite HR Portal</a></li><li class="without-image"><a href="https://sso.mapnwea.org/auth/login" target="_blank" title="NWEA">NWEA</a></li><li class="without-image"><a href="/content/stafflinks" title="Staff Links">Staff Links</a></li><li class="without-image"><a href="https://www.google.com/a/e-hps.net/" target="_blank" title="Email">Email</a></li><li class="without-image"><a href="https://ehps.illuminateed.com" target="_blank" title="Illuminate">Illuminate</a></li><li class="without-image"><a href="https://michigan.kready.org/login" target="_blank" title="KRA-Michigan">KRA-Michigan</a></li><li class="without-image"><a href="https://sky2.baisd.net/scripts/wsisa.dll/WService=wsEAplus/seplog01.w" target="_blank" title="Skyward">Skyward</a></li><li class="without-image"><a href="https://live.stagessoftware.com" title="Stages Login">Stages Login</a></li><li class="without-image"><a href="http://helpdesk.e-hps.net/portal" target="_blank" title="Helpdesk (Submit a Ticket)">Helpdesk (Submit a Ticket)</a></li><li class="without-image"><a href="http://helpdesk.e-hps.net/pro_users/login" target="_blank" title="Helpdesk for Admins">Helpdesk for Admins</a></li><li class="without-image"><a href="https://baisd400.baisd.net/XDHPI0207/PIMAIN.MBR/PIMAIN?APID=PI0207&amp;LicVer=&amp;LicCli=&amp;Logon=E&amp;PwdChg=Y&amp;User1=UpperCase%3Dtrue&amp;User2=&amp;User3=&amp;User4=&amp;User5=&amp;WinParm=toolbar=0,location=0,resizable=1,scrollbars=1,status=1" target="_blank" title="CMT">CMT</a></li><li class="without-image"><a href="https://go2.pcgeducation.com/miessexvillehampton" target="_blank" title="EasyIEP">EasyIEP</a></li><li class="without-image"><a href="https://www.willsub.com/" target="_blank" title="Willsub">Willsub</a></li><li class="without-image"><a href="https://dibels.net/" target="_blank" title="Dibels">Dibels</a></li><li class="without-image"><a href="http://www.learn360.com/index.aspx" target="_blank" title="Learn360">Learn360</a></li><li class="without-image"><a href="http://www.solutionwhere.com/glb/cw/main.asp" title="BAISD Coursewhere Login">BAISD Coursewhere Login</a></li><li class="without-image"><a href="https://asp.schoolmessenger.com/essexvillehamptonsd/index.php" target="_blank" title="School Messenger">School Messenger</a></li><li class="without-image"><a href="http://e-hps.mi.safeschools.com/login" title="Mandatory Staff Training (Safe Schools)">Mandatory Staff Training (Safe Schools)</a></li></ul></li></ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+    
+
+            </header>
+        </div>
+
+        
+    
+	<script type="text/javascript">
+		$(window).load(function () {
+		    $('#slideshow .slides').nivoSlider({ effect: 'fade' });
+		});
+	</script>
+	<div id="slideshow">
 		<div class="slideshow-overlay"></div>
 		<div class="slides nivoSlider">
 			
@@ -18,5 +595,848 @@
 				
 					<img alt="" title="" src="http://www.e-hps.net//images/full//docs/building/3/header gallery/verellen header.jpg?id=507&amp;width=1600" style="width: 1108px; visibility: hidden; display: inline;">
 				
-		<img class="nivo-main-image" src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" alt="" style="display: inline; width: 1108px; height: 242px;"><div class="nivo-caption"></div><div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div><div class="nivo-slice" name="0" style="left: 0px; width: 1108px; height: 242px; opacity: 1; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-0px;"></div><div class="nivo-slice" name="1" style="left: 74px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-74px;"></div><div class="nivo-slice" name="2" style="left: 148px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-148px;"></div><div class="nivo-slice" name="3" style="left: 222px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-222px;"></div><div class="nivo-slice" name="4" style="left: 296px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-296px;"></div><div class="nivo-slice" name="5" style="left: 370px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-370px;"></div><div class="nivo-slice" name="6" style="left: 444px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-444px;"></div><div class="nivo-slice" name="7" style="left: 518px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-518px;"></div><div class="nivo-slice" name="8" style="left: 592px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-592px;"></div><div class="nivo-slice" name="9" style="left: 666px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-666px;"></div><div class="nivo-slice" name="10" style="left: 740px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-740px;"></div><div class="nivo-slice" name="11" style="left: 814px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-814px;"></div><div class="nivo-slice" name="12" style="left: 888px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-888px;"></div><div class="nivo-slice" name="13" style="left: 962px; width: 74px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-962px;"></div><div class="nivo-slice" name="14" style="left: 1036px; width: 72px; height: 242px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//userfiles/2018-06/11393add-19b3-493e-a814-e5bbefcdee5e.jpg" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-1036px;"></div></div><div class="nivo-controlNav"><a class="nivo-control active" rel="0">1</a><a class="nivo-control" rel="1">2</a><a class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a class="nivo-control" rel="4">5</a><a class="nivo-control" rel="5">6</a><a class="nivo-control" rel="6">7</a><a class="nivo-control" rel="7">8</a></div>
+		<img class="nivo-main-image" src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" alt="" style="display: inline; width: 1108px; height: 208px;"><div class="nivo-caption"></div><div class="nivo-directionNav"><a class="nivo-prevNav">Prev</a><a class="nivo-nextNav">Next</a></div><div class="nivo-slice" name="0" style="left: 0px; width: 1108px; height: 208px; opacity: 1; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-0px;"></div><div class="nivo-slice" name="1" style="left: 74px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-74px;"></div><div class="nivo-slice" name="2" style="left: 148px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-148px;"></div><div class="nivo-slice" name="3" style="left: 222px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-222px;"></div><div class="nivo-slice" name="4" style="left: 296px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-296px;"></div><div class="nivo-slice" name="5" style="left: 370px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-370px;"></div><div class="nivo-slice" name="6" style="left: 444px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-444px;"></div><div class="nivo-slice" name="7" style="left: 518px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-518px;"></div><div class="nivo-slice" name="8" style="left: 592px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-592px;"></div><div class="nivo-slice" name="9" style="left: 666px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-666px;"></div><div class="nivo-slice" name="10" style="left: 740px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-740px;"></div><div class="nivo-slice" name="11" style="left: 814px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-814px;"></div><div class="nivo-slice" name="12" style="left: 888px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-888px;"></div><div class="nivo-slice" name="13" style="left: 962px; width: 74px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-962px;"></div><div class="nivo-slice" name="14" style="left: 1036px; width: 72px; height: 208px; opacity: 0; overflow: hidden;"><img src="http://www.e-hps.net//images/full//docs/building/4/header gallery/header 1.jpg?id=508&amp;width=1600" style="position:absolute; width:1108px; height:auto; display:block !important; top:0; left:-1036px;"></div></div><div class="nivo-controlNav"><a class="nivo-control" rel="0">1</a><a class="nivo-control active" rel="1">2</a><a class="nivo-control" rel="2">3</a><a class="nivo-control" rel="3">4</a><a class="nivo-control" rel="4">5</a><a class="nivo-control" rel="5">6</a><a class="nivo-control" rel="6">7</a><a class="nivo-control" rel="7">8</a></div>
 	</div>
+
+
+        <div class="Top-NavBack hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <ul class="nav navbar-nav district-top-nav"><li class="without-image" style="width: 14.2857%;"><a href="/" title="Home">Home</a></li><li class="without-image" style="width: 14.2857%;"><a href="/DistrictnewsArticles.aspx" title="District News">District News</a></li><li class="without-image" style="width: 14.2857%;"><a href="/Calendar/0" title="Calendar">Calendar</a></li><li class="without-image" style="width: 14.2857%;"><a href="/Administration" title="Departments">Departments</a></li><li class="without-image" style="width: 14.2857%;"><a href="/districtBoardEd.aspx" title="Board of Education">Board of Education</a></li><li class="without-image" style="width: 14.2857%;"><a href="/District/Links-Forms" title="Forms &amp; Links">Forms &amp; Links</a></li><li class="dropdown" style="width: 14.2857%;"><a href="#" class="dropdown-toggle" data-toggle="dropdown" target="_blank" title="AER/Bids/RFP's">AER/Bids/RFP's  <strong class="caret"></strong></a><ul class="dropdown-menu"><li class="without-image"><a href="/Content/60" target="_blank" title="Current Bids">Current Bids</a></li><li class="without-image"><a href="/content/rfp" target="_blank" title="Older RFPs">Older RFPs</a></li><li class="without-image"><a href="/Content/66" title="AER Reports">AER Reports</a></li></ul></li></ul>
+
+                </div>
+            </div>
+        </div>
+
+        
+    
+    <div id="start-content"></div>
+	<div class="news-container">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<div class="clearfix panel content">
+						<h1 class="news-header">District News
+						</h1>
+						<div class="news">
+							
+
+	<style type="text/css">
+		.rssNewsLink {
+			float: right;
+		}
+
+		.newsSearch {
+			text-align: right;
+		}
+
+		.newsSearch .searchText {
+			padding: 3px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			border-radius: 4px;
+			color: #333;
+			background-color: #fff;
+			border-color: #ccc;
+		}
+
+		.newsSearch .searchButton {
+			display: inline-block;
+			margin-bottom: 0;
+			font-weight: 400;
+			text-align: center;
+			vertical-align: middle;
+			background-image: none;
+			border: 1px solid transparent;
+			white-space: nowrap;
+			padding: 4px 12px;
+			font-size: 14px;
+			line-height: 1.42857143;
+			border-radius: 4px;
+			color: #333;
+			background-color: #fff;
+			border-color: #ccc;
+			-webkit-appearance: button;
+			cursor: pointer;
+		}
+
+		.newsSearch .searchButton:before {
+			content: "\f002";
+		}
+
+        #pageNumbers li {
+            float: left;
+            margin: 2px;
+        }
+	</style>
+
+	
+			<section id="news-list" aria-label="news articles">
+		
+			<div class="article row">
+				<a id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl01_lnkTitle" class="news-title" href="/News/1233">Hall of Fame Nominations</a>
+				
+				<span class="news-post-date">
+					Posted On: Tuesday, September 4, 2018</span>
+				<div class="news-summary-container">
+					<span id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl01_lblSummary" class="news-summary"><p>Nominations are now open for Hall of Fame. Please pass the word and nominate people that have made a difference in our district.&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Please see link below for the form:</p>
+
+<p>&nbsp;</p>
+
+<p><span class="Underline" style="text-decoration:underline;"><strong><a href="https://goo.gl/forms/3F8Hjzh8pEAfaALz1"><span style="color:#000000;"><span class="Underline">Hall of Fame Nomination Form</span></span></a></strong></span></p></span>
+				</div>
+				<div class="view-all-link-container">
+					
+				</div>
+			</div>
+		
+			<div class="article row">
+				<a id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl02_lnkTitle" class="news-title" href="/News/1232">Duke Dash</a>
+				
+				<span class="news-post-date">
+					Posted On: Saturday, August 25, 2018</span>
+				<div class="news-summary-container">
+					<span id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl02_lblSummary" class="news-summary"><p>Join us for a fun autumn run through Essexville at the Inaugural Duke Dash!&nbsp; In addition to the race, there will be events for the kids such as pumpkin decorating, games, face painting and more!&nbsp; Our brand new concessions trailer will also be on site with food to purchase as well as apple cider slushies!&nbsp; We are so excited to demonstrate our commitment to health and wellness and an active lifestyle.&nbsp; All proceeds will go toward equipment to improve our schools' playgrounds.&nbsp;&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>Go to <strong><a href="http://www.e-hps.net/dukedash"><span class="Underline" style="text-decoration:underline;"><span style="color:#000000;">www.e-hps.net/dukedash</span></span></a></strong> for more information or click <a href="/userfiles/3/my files/duke dash poster.jpg?id=5345" target="_blank"><strong><span class="Underline" style="text-decoration:underline;"><span style="color:#000000;">here</span> </span></strong></a>for more information.</p></span>
+				</div>
+				<div class="view-all-link-container">
+					
+				</div>
+			</div>
+		
+			<div class="article row">
+				<a id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl03_lnkTitle" class="news-title" href="/News/1231">Garber Yearbook</a>
+				
+				<span class="news-post-date">
+					Posted On: Sunday, July 29, 2018</span>
+				<div class="news-summary-container">
+					<span id="ctl00_ctl00_MasterNews_MasterNews_ctl00_rep_news_ctl03_lblSummary" class="news-summary"><p><a href="https://wpcgo.yearbookforever.com/sI23y"><img alt="Buy a Yearbook or Ad" src="https://www.walsworthyearbooks.com/images/schoolbanners/728x90-K-2019.jpg"></a></p></span>
+				</div>
+				<div class="view-all-link-container">
+					
+				</div>
+			</div>
+		
+			<div class="clr"></div>
+			</section>
+		
+						</div>
+						<a href="/districtNewsArticles.aspx" class="view-all-news">View All News
+						</a>
+						<div class="clr">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+        <div class="body-content-container">
+            <div class="container">
+                <div class="masterC alignment-stretch">
+                    <div class="row">
+                        
+    <div class="content-section">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 backgroundcolor1">
+            <div class="clearfix panel content">
+                
+                    <h1>Quick Links
+                    </h1>
+                    <ul class="nav navbar-nav left-nav"><li class="without-image"><a href="/" title="Home"><i class="fa fa-home"></i>Home</a></li><li class="without-image"><a href="/DistrictnewsArticles.aspx" title="District News">District News</a></li><li class="without-image"><a href="/Calendar/0" title="District Events">District Events</a></li><li class="without-image"><a href="/Superintendent" title="Superintendent's Message">Superintendent's Message</a></li><li class="without-image"><a href="http://chartwellsk12.compass-usa.com/EssexvilleHamptonPublicSchoolsDining" target="_blank" title="Food Service">Food Service</a></li><li class="without-image"><a href="/Content/68" target="_blank" title="Community Enrichment">Community Enrichment</a></li><li class="without-image"><a href="/districtBoardEd.aspx" title="Board of Education">Board of Education</a></li><li class="without-image"><a href="/1/Staff" title="Staff Directory">Staff Directory</a></li><li class="without-image"><a href="http://ehpsdukes.com/" title="Athletics">Athletics</a></li><li class="without-image"><a href="/Gallery" title="Photo Galleries">Photo Galleries</a></li><li class="without-image"><a href="/employment" title="Employment">Employment</a></li><li class="without-image"><a href="/District/Links-Forms" title="Forms &amp; Links">Forms &amp; Links</a></li><li class="without-image"><a href="/Content/stafflinks" title="Staff Links">Staff Links</a></li><li class="without-image"><a href="/Content/122" title="Integrated Pesticide Management">Integrated Pesticide Management</a></li><li class="without-image"><a href="/userfiles/3/my files/educator_evaluation_2016.pdf?id=1452" title="Educator Evaluation Requirements">Educator Evaluation Requirements</a></li><li class="without-image"><a href="/Content/126" title="Annual Education Reports">Annual Education Reports</a></li></ul>
+
+                
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 backgroundcolor2">
+            <div class="clearfix panel content">
+                
+	
+<div class="feature-content ">
+    
+    <h1 class="feature-content-title title">
+        Videos
+    </h1>
+    
+
+    <div class="feature-content-body content">
+        
+        <div class="feature-content-content">
+            <p><a href="/userfiles/8/my files/september 2017.pdf?id=4238" target="_blank"><span style="color: rgb(0, 0, 255);"><span style="font-size: 18px;"><strong>DISTINGUISHED DUKE RECIPIENTS </strong></span></span></a></p>
+
+<p><span style="font-size:16px;"><u><strong>EDUCATE</strong></u></span></p>
+
+<p class="videoplayer" data-height="266" data-playlist="null" data-width="475" height="266px" width="475px">
+<div preload="none" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f79e2b5fa-5b8c-463a-a952-901ed542f88700001.png" id="79e2b5fa-5b8c-463a-a952-901ed542f887" class="video-js vjs-default-skin vjs-paused vjs-controls-enabled vjs-workinghover dimensions-79e2b5fa-5b8c-463a-a952-901ed542f887 vjs-user-inactive" role="region" aria-label="video player"><video class="vjs-tech" id="79e2b5fa-5b8c-463a-a952-901ed542f887_html5_api" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f79e2b5fa-5b8c-463a-a952-901ed542f88700001.png" preload="none"><source src="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fvideos%2f79e2b5fa-5b8c-463a-a952-901ed542f887.mp4" type="video/mp4"></video><div></div><div class="vjs-poster" tabindex="-1" style="background-image: url(&quot;https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f79e2b5fa-5b8c-463a-a952-901ed542f88700001.png&quot;);"></div><div class="vjs-text-track-display vjs-hidden" aria-live="assertive" aria-atomic="true"></div><div class="vjs-loading-spinner" dir="ltr"></div><button class="vjs-big-play-button" type="button" aria-live="polite" title="Play Video"><span class="vjs-control-text">Play Video</span></button><div class="vjs-control-bar" dir="ltr" role="group" aria-label="control-group"><button class="vjs-play-control vjs-control vjs-button " type="button" aria-live="polite" title="Play"><span class="vjs-control-text">Play</span></button><div class="vjs-volume-menu-button vjs-menu-button vjs-menu-button-inline vjs-control vjs-button vjs-volume-menu-button-horizontal vjs-vol-3" tabindex="0" role="button" aria-live="polite" title="Mute"><div class="vjs-menu"><div class="vjs-menu-content"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" aria-label="volume level" aria-valuetext="100.00%"><div class="vjs-volume-level"><span class="vjs-control-text"></span></div></div></div></div><span class="vjs-control-text">Mute</span></div><div class="vjs-current-time vjs-time-control vjs-control"><div class="vjs-current-time-display" aria-live="off"><span class="vjs-control-text">Current Time </span>0:00</div></div><div class="vjs-time-control vjs-time-divider"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><div class="vjs-duration-display" aria-live="off"><span class="vjs-control-text">Duration Time</span> 0:00</div></div><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="NaN" aria-valuemin="0" aria-valuemax="100" aria-label="progress bar" aria-valuetext="0:00"><div class="vjs-load-progress"><span class="vjs-control-text"><span>Loaded</span>: 0%</span></div><div class="vjs-mouse-display" data-current-time="0:00" style="left: 0px;"></div><div class="vjs-play-progress vjs-slider-bar" data-current-time="0:00"><span class="vjs-control-text"><span>Progress</span>: 0%</span></div></div></div><div class="vjs-live-control vjs-control vjs-hidden"><div class="vjs-live-display" aria-live="off"><span class="vjs-control-text">Stream Type</span>LIVE</div></div><div class="vjs-remaining-time vjs-time-control vjs-control"><div class="vjs-remaining-time-display" aria-live="off"><span class="vjs-control-text">Remaining Time</span> -0:00</div></div><div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Playback Rate" aria-expanded="false" aria-haspopup="true"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Playback Rate</span><div class="vjs-playback-rate-value">1</div></div><div class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Chapters" aria-expanded="false" aria-haspopup="true" aria-label="Chapters Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-title" tabindex="-1">Chapters</li></ul></div><span class="vjs-control-text">Chapters</span></div><div class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Descriptions" aria-expanded="false" aria-haspopup="true" aria-label="Descriptions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">descriptions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Descriptions</span></div><div class="vjs-subtitles-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Subtitles" aria-expanded="false" aria-haspopup="true" aria-label="Subtitles Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">subtitles off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Subtitles</span></div><div class="vjs-captions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Captions" aria-expanded="false" aria-haspopup="true" aria-label="Captions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">captions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Captions</span></div><div class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Audio Track" aria-expanded="false" aria-haspopup="true" aria-label="Audio Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Audio Track</span></div><button class="vjs-fullscreen-control vjs-control vjs-button " type="button" aria-live="polite" title="Fullscreen"><span class="vjs-control-text">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="79e2b5fa-5b8c-463a-a952-901ed542f887_component_340_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-offscreen" id="79e2b5fa-5b8c-463a-a952-901ed542f887_component_340_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-caption-settings vjs-modal-overlay vjs-hidden" tabindex="-1" role="dialog" aria-labelledby="TTsettingsDialogLabel-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345" aria-describedby="TTsettingsDialogDescription-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+    <div role="document">
+      <div role="heading" aria-level="1" id="TTsettingsDialogLabel-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345" class="vjs-control-text">Captions Settings Dialog</div>
+      <div id="TTsettingsDialogDescription-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345" class="vjs-control-text">Beginning of dialog window. Escape will cancel and close the window.</div>
+      <div class="vjs-tracksettings">
+        <div class="vjs-tracksettings-colors">
+          <fieldset class="vjs-fg-color vjs-tracksetting">
+            <legend>Text</legend>
+            <label class="vjs-label" for="captions-foreground-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Color</label>
+            <select id="captions-foreground-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="#FFF" selected="">White</option>
+              <option value="#000">Black</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-text-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-foreground-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Transparency</label>
+              <select id="captions-foreground-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="vjs-bg-color vjs-tracksetting">
+            <legend>Background</legend>
+            <label class="vjs-label" for="captions-background-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Color</label>
+            <select id="captions-background-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-bg-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-background-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Transparency</label>
+              <select id="captions-background-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="0">Transparent</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="window-color vjs-tracksetting">
+            <legend>Window</legend>
+            <label class="vjs-label" for="captions-window-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Color</label>
+            <select id="captions-window-color-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-window-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-window-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Transparency</label>
+              <select id="captions-window-opacity-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+                <option value="0" selected="">Transparent</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="1">Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+        </div> <!-- vjs-tracksettings-colors -->
+        <div class="vjs-tracksettings-font">
+          <div class="vjs-font-percent vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-size-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Font Size</label>
+            <select id="captions-font-size-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="0.50">50%</option>
+              <option value="0.75">75%</option>
+              <option value="1.00" selected="">100%</option>
+              <option value="1.25">125%</option>
+              <option value="1.50">150%</option>
+              <option value="1.75">175%</option>
+              <option value="2.00">200%</option>
+              <option value="3.00">300%</option>
+              <option value="4.00">400%</option>
+            </select>
+          </div>
+          <div class="vjs-edge-style vjs-tracksetting">
+            <label class="vjs-label" for="captions-edge-style-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Text Edge Style</label>
+            <select id="captions-edge-style-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="none" selected="">None</option>
+              <option value="raised">Raised</option>
+              <option value="depressed">Depressed</option>
+              <option value="uniform">Uniform</option>
+              <option value="dropshadow">Dropshadow</option>
+            </select>
+          </div>
+          <div class="vjs-font-family vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-family-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">Font Family</label>
+            <select id="captions-font-family-79e2b5fa-5b8c-463a-a952-901ed542f887_component_345">
+              <option value="proportionalSansSerif" selected="">Proportional Sans-Serif</option>
+              <option value="monospaceSansSerif">Monospace Sans-Serif</option>
+              <option value="proportionalSerif">Proportional Serif</option>
+              <option value="monospaceSerif">Monospace Serif</option>
+              <option value="casual">Casual</option>
+              <option value="script">Script</option>
+              <option value="small-caps">Small Caps</option>
+            </select>
+          </div>
+        </div> <!-- vjs-tracksettings-font -->
+        <div class="vjs-tracksettings-controls">
+          <button class="vjs-default-button">Defaults</button>
+          <button class="vjs-done-button">Done</button>
+        </div>
+      </div> <!-- vjs-tracksettings -->
+    </div> <!--  role="document" --></div></div>
+</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:16px;"><u><strong>RELATE</strong></u></span></p>
+
+<p class="videoplayer" data-height="266" data-playlist="null" data-width="475" height="266px" width="475px">
+<div preload="none" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f3b2e7954-f2fb-4df1-b467-5fdf56e7c57600002.png" id="3b2e7954-f2fb-4df1-b467-5fdf56e7c576" class="video-js vjs-default-skin vjs-paused vjs-controls-enabled vjs-workinghover dimensions-3b2e7954-f2fb-4df1-b467-5fdf56e7c576 vjs-user-inactive" role="region" aria-label="video player"><video class="vjs-tech" id="3b2e7954-f2fb-4df1-b467-5fdf56e7c576_html5_api" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f3b2e7954-f2fb-4df1-b467-5fdf56e7c57600002.png" preload="none"><source src="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fvideos%2f3b2e7954-f2fb-4df1-b467-5fdf56e7c576.mp4" type="video/mp4"></video><div></div><div class="vjs-poster" tabindex="-1" style="background-image: url(&quot;https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f3b2e7954-f2fb-4df1-b467-5fdf56e7c57600002.png&quot;);"></div><div class="vjs-text-track-display vjs-hidden" aria-live="assertive" aria-atomic="true"></div><div class="vjs-loading-spinner" dir="ltr"></div><button class="vjs-big-play-button" type="button" aria-live="polite" title="Play Video"><span class="vjs-control-text">Play Video</span></button><div class="vjs-control-bar" dir="ltr" role="group" aria-label="control-group"><button class="vjs-play-control vjs-control vjs-button " type="button" aria-live="polite" title="Play"><span class="vjs-control-text">Play</span></button><div class="vjs-volume-menu-button vjs-menu-button vjs-menu-button-inline vjs-control vjs-button vjs-volume-menu-button-horizontal vjs-vol-3" tabindex="0" role="button" aria-live="polite" title="Mute"><div class="vjs-menu"><div class="vjs-menu-content"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" aria-label="volume level" aria-valuetext="100.00%"><div class="vjs-volume-level"><span class="vjs-control-text"></span></div></div></div></div><span class="vjs-control-text">Mute</span></div><div class="vjs-current-time vjs-time-control vjs-control"><div class="vjs-current-time-display" aria-live="off"><span class="vjs-control-text">Current Time </span>0:00</div></div><div class="vjs-time-control vjs-time-divider"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><div class="vjs-duration-display" aria-live="off"><span class="vjs-control-text">Duration Time</span> 0:00</div></div><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="NaN" aria-valuemin="0" aria-valuemax="100" aria-label="progress bar" aria-valuetext="0:00"><div class="vjs-load-progress"><span class="vjs-control-text"><span>Loaded</span>: 0%</span></div><div class="vjs-mouse-display" data-current-time="0:00" style="left: 0px;"></div><div class="vjs-play-progress vjs-slider-bar" data-current-time="0:00"><span class="vjs-control-text"><span>Progress</span>: 0%</span></div></div></div><div class="vjs-live-control vjs-control vjs-hidden"><div class="vjs-live-display" aria-live="off"><span class="vjs-control-text">Stream Type</span>LIVE</div></div><div class="vjs-remaining-time vjs-time-control vjs-control"><div class="vjs-remaining-time-display" aria-live="off"><span class="vjs-control-text">Remaining Time</span> -0:00</div></div><div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Playback Rate" aria-expanded="false" aria-haspopup="true"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Playback Rate</span><div class="vjs-playback-rate-value">1</div></div><div class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Chapters" aria-expanded="false" aria-haspopup="true" aria-label="Chapters Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-title" tabindex="-1">Chapters</li></ul></div><span class="vjs-control-text">Chapters</span></div><div class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Descriptions" aria-expanded="false" aria-haspopup="true" aria-label="Descriptions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">descriptions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Descriptions</span></div><div class="vjs-subtitles-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Subtitles" aria-expanded="false" aria-haspopup="true" aria-label="Subtitles Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">subtitles off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Subtitles</span></div><div class="vjs-captions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Captions" aria-expanded="false" aria-haspopup="true" aria-label="Captions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">captions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Captions</span></div><div class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Audio Track" aria-expanded="false" aria-haspopup="true" aria-label="Audio Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Audio Track</span></div><button class="vjs-fullscreen-control vjs-control vjs-button " type="button" aria-live="polite" title="Fullscreen"><span class="vjs-control-text">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_625_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-offscreen" id="3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_625_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-caption-settings vjs-modal-overlay vjs-hidden" tabindex="-1" role="dialog" aria-labelledby="TTsettingsDialogLabel-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629" aria-describedby="TTsettingsDialogDescription-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+    <div role="document">
+      <div role="heading" aria-level="1" id="TTsettingsDialogLabel-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629" class="vjs-control-text">Captions Settings Dialog</div>
+      <div id="TTsettingsDialogDescription-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629" class="vjs-control-text">Beginning of dialog window. Escape will cancel and close the window.</div>
+      <div class="vjs-tracksettings">
+        <div class="vjs-tracksettings-colors">
+          <fieldset class="vjs-fg-color vjs-tracksetting">
+            <legend>Text</legend>
+            <label class="vjs-label" for="captions-foreground-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Color</label>
+            <select id="captions-foreground-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="#FFF" selected="">White</option>
+              <option value="#000">Black</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-text-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-foreground-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Transparency</label>
+              <select id="captions-foreground-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="vjs-bg-color vjs-tracksetting">
+            <legend>Background</legend>
+            <label class="vjs-label" for="captions-background-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Color</label>
+            <select id="captions-background-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-bg-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-background-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Transparency</label>
+              <select id="captions-background-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="0">Transparent</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="window-color vjs-tracksetting">
+            <legend>Window</legend>
+            <label class="vjs-label" for="captions-window-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Color</label>
+            <select id="captions-window-color-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-window-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-window-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Transparency</label>
+              <select id="captions-window-opacity-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+                <option value="0" selected="">Transparent</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="1">Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+        </div> <!-- vjs-tracksettings-colors -->
+        <div class="vjs-tracksettings-font">
+          <div class="vjs-font-percent vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-size-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Font Size</label>
+            <select id="captions-font-size-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="0.50">50%</option>
+              <option value="0.75">75%</option>
+              <option value="1.00" selected="">100%</option>
+              <option value="1.25">125%</option>
+              <option value="1.50">150%</option>
+              <option value="1.75">175%</option>
+              <option value="2.00">200%</option>
+              <option value="3.00">300%</option>
+              <option value="4.00">400%</option>
+            </select>
+          </div>
+          <div class="vjs-edge-style vjs-tracksetting">
+            <label class="vjs-label" for="captions-edge-style-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Text Edge Style</label>
+            <select id="captions-edge-style-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="none" selected="">None</option>
+              <option value="raised">Raised</option>
+              <option value="depressed">Depressed</option>
+              <option value="uniform">Uniform</option>
+              <option value="dropshadow">Dropshadow</option>
+            </select>
+          </div>
+          <div class="vjs-font-family vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-family-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">Font Family</label>
+            <select id="captions-font-family-3b2e7954-f2fb-4df1-b467-5fdf56e7c576_component_629">
+              <option value="proportionalSansSerif" selected="">Proportional Sans-Serif</option>
+              <option value="monospaceSansSerif">Monospace Sans-Serif</option>
+              <option value="proportionalSerif">Proportional Serif</option>
+              <option value="monospaceSerif">Monospace Serif</option>
+              <option value="casual">Casual</option>
+              <option value="script">Script</option>
+              <option value="small-caps">Small Caps</option>
+            </select>
+          </div>
+        </div> <!-- vjs-tracksettings-font -->
+        <div class="vjs-tracksettings-controls">
+          <button class="vjs-default-button">Defaults</button>
+          <button class="vjs-done-button">Done</button>
+        </div>
+      </div> <!-- vjs-tracksettings -->
+    </div> <!--  role="document" --></div></div>
+</p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:16px;"><u><strong>INNOVATE</strong></u></span></p>
+
+<p class="videoplayer" data-height="266" data-playlist="null" data-width="475" height="266px" width="475px">
+<div preload="none" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f5b2df34d-f17a-4b45-9da7-cf6f989eadf200001.png" id="5b2df34d-f17a-4b45-9da7-cf6f989eadf2" class="video-js vjs-default-skin vjs-paused vjs-controls-enabled vjs-workinghover dimensions-5b2df34d-f17a-4b45-9da7-cf6f989eadf2 vjs-user-inactive" role="region" aria-label="video player"><video class="vjs-tech" id="5b2df34d-f17a-4b45-9da7-cf6f989eadf2_html5_api" poster="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f5b2df34d-f17a-4b45-9da7-cf6f989eadf200001.png" preload="none"><source src="https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fvideos%2f5b2df34d-f17a-4b45-9da7-cf6f989eadf2.mp4" type="video/mp4"></video><div></div><div class="vjs-poster" tabindex="-1" style="background-image: url(&quot;https://video.cdn.schoolpointe.com/MI_EssexvilleHamptonPS%2f2017%2f09%2fimages%2f5b2df34d-f17a-4b45-9da7-cf6f989eadf200001.png&quot;);"></div><div class="vjs-text-track-display vjs-hidden" aria-live="assertive" aria-atomic="true"></div><div class="vjs-loading-spinner" dir="ltr"></div><button class="vjs-big-play-button" type="button" aria-live="polite" title="Play Video"><span class="vjs-control-text">Play Video</span></button><div class="vjs-control-bar" dir="ltr" role="group" aria-label="control-group"><button class="vjs-play-control vjs-control vjs-button " type="button" aria-live="polite" title="Play"><span class="vjs-control-text">Play</span></button><div class="vjs-volume-menu-button vjs-menu-button vjs-menu-button-inline vjs-control vjs-button vjs-volume-menu-button-horizontal vjs-vol-3" tabindex="0" role="button" aria-live="polite" title="Mute"><div class="vjs-menu"><div class="vjs-menu-content"><div tabindex="0" class="vjs-volume-bar vjs-slider-bar vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="100.00" aria-valuemin="0" aria-valuemax="100" aria-label="volume level" aria-valuetext="100.00%"><div class="vjs-volume-level"><span class="vjs-control-text"></span></div></div></div></div><span class="vjs-control-text">Mute</span></div><div class="vjs-current-time vjs-time-control vjs-control"><div class="vjs-current-time-display" aria-live="off"><span class="vjs-control-text">Current Time </span>0:00</div></div><div class="vjs-time-control vjs-time-divider"><div><span>/</span></div></div><div class="vjs-duration vjs-time-control vjs-control"><div class="vjs-duration-display" aria-live="off"><span class="vjs-control-text">Duration Time</span> 0:00</div></div><div class="vjs-progress-control vjs-control"><div tabindex="0" class="vjs-progress-holder vjs-slider vjs-slider-horizontal" role="slider" aria-valuenow="NaN" aria-valuemin="0" aria-valuemax="100" aria-label="progress bar" aria-valuetext="0:00"><div class="vjs-load-progress"><span class="vjs-control-text"><span>Loaded</span>: 0%</span></div><div class="vjs-mouse-display" data-current-time="0:00" style="left: 0px;"></div><div class="vjs-play-progress vjs-slider-bar" data-current-time="0:00"><span class="vjs-control-text"><span>Progress</span>: 0%</span></div></div></div><div class="vjs-live-control vjs-control vjs-hidden"><div class="vjs-live-display" aria-live="off"><span class="vjs-control-text">Stream Type</span>LIVE</div></div><div class="vjs-remaining-time vjs-time-control vjs-control"><div class="vjs-remaining-time-display" aria-live="off"><span class="vjs-control-text">Remaining Time</span> -0:00</div></div><div class="vjs-custom-control-spacer vjs-spacer ">&nbsp;</div><div class="vjs-playback-rate vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Playback Rate" aria-expanded="false" aria-haspopup="true"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Playback Rate</span><div class="vjs-playback-rate-value">1</div></div><div class="vjs-chapters-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Chapters" aria-expanded="false" aria-haspopup="true" aria-label="Chapters Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-title" tabindex="-1">Chapters</li></ul></div><span class="vjs-control-text">Chapters</span></div><div class="vjs-descriptions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Descriptions" aria-expanded="false" aria-haspopup="true" aria-label="Descriptions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">descriptions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Descriptions</span></div><div class="vjs-subtitles-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Subtitles" aria-expanded="false" aria-haspopup="true" aria-label="Subtitles Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">subtitles off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Subtitles</span></div><div class="vjs-captions-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Captions" aria-expanded="false" aria-haspopup="true" aria-label="Captions Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"><li class="vjs-menu-item vjs-selected" tabindex="-1" role="menuitemcheckbox" aria-live="polite" aria-checked="true" title=", selected">captions off<span class="vjs-control-text">, selected</span></li></ul></div><span class="vjs-control-text">Captions</span></div><div class="vjs-audio-button vjs-menu-button vjs-menu-button-popup vjs-control vjs-button vjs-hidden" tabindex="0" role="menuitem" aria-live="polite" title="Audio Track" aria-expanded="false" aria-haspopup="true" aria-label="Audio Menu"><div class="vjs-menu" role="presentation"><ul class="vjs-menu-content" role="menu"></ul></div><span class="vjs-control-text">Audio Track</span></div><button class="vjs-fullscreen-control vjs-control vjs-button " type="button" aria-live="polite" title="Fullscreen"><span class="vjs-control-text">Fullscreen</span></button></div><div class="vjs-error-display vjs-modal-dialog vjs-hidden " tabindex="-1" aria-describedby="5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_906_description" aria-hidden="true" aria-label="Modal Window" role="dialog"><p class="vjs-modal-dialog-description vjs-offscreen" id="5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_906_description">This is a modal window.</p><div class="vjs-modal-dialog-content" role="document"></div></div><div class="vjs-caption-settings vjs-modal-overlay vjs-hidden" tabindex="-1" role="dialog" aria-labelledby="TTsettingsDialogLabel-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910" aria-describedby="TTsettingsDialogDescription-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+    <div role="document">
+      <div role="heading" aria-level="1" id="TTsettingsDialogLabel-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910" class="vjs-control-text">Captions Settings Dialog</div>
+      <div id="TTsettingsDialogDescription-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910" class="vjs-control-text">Beginning of dialog window. Escape will cancel and close the window.</div>
+      <div class="vjs-tracksettings">
+        <div class="vjs-tracksettings-colors">
+          <fieldset class="vjs-fg-color vjs-tracksetting">
+            <legend>Text</legend>
+            <label class="vjs-label" for="captions-foreground-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Color</label>
+            <select id="captions-foreground-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="#FFF" selected="">White</option>
+              <option value="#000">Black</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-text-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-foreground-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Transparency</label>
+              <select id="captions-foreground-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="vjs-bg-color vjs-tracksetting">
+            <legend>Background</legend>
+            <label class="vjs-label" for="captions-background-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Color</label>
+            <select id="captions-background-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-bg-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-background-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Transparency</label>
+              <select id="captions-background-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+                <option value="1" selected="">Opaque</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="0">Transparent</option>
+              </select>
+            </span>
+          </fieldset>
+          <fieldset class="window-color vjs-tracksetting">
+            <legend>Window</legend>
+            <label class="vjs-label" for="captions-window-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Color</label>
+            <select id="captions-window-color-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="#000" selected="">Black</option>
+              <option value="#FFF">White</option>
+              <option value="#F00">Red</option>
+              <option value="#0F0">Green</option>
+              <option value="#00F">Blue</option>
+              <option value="#FF0">Yellow</option>
+              <option value="#F0F">Magenta</option>
+              <option value="#0FF">Cyan</option>
+            </select>
+            <span class="vjs-window-opacity vjs-opacity">
+              <label class="vjs-label" for="captions-window-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Transparency</label>
+              <select id="captions-window-opacity-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+                <option value="0" selected="">Transparent</option>
+                <option value="0.5">Semi-Transparent</option>
+                <option value="1">Opaque</option>
+              </select>
+            </span>
+          </fieldset>
+        </div> <!-- vjs-tracksettings-colors -->
+        <div class="vjs-tracksettings-font">
+          <div class="vjs-font-percent vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-size-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Font Size</label>
+            <select id="captions-font-size-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="0.50">50%</option>
+              <option value="0.75">75%</option>
+              <option value="1.00" selected="">100%</option>
+              <option value="1.25">125%</option>
+              <option value="1.50">150%</option>
+              <option value="1.75">175%</option>
+              <option value="2.00">200%</option>
+              <option value="3.00">300%</option>
+              <option value="4.00">400%</option>
+            </select>
+          </div>
+          <div class="vjs-edge-style vjs-tracksetting">
+            <label class="vjs-label" for="captions-edge-style-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Text Edge Style</label>
+            <select id="captions-edge-style-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="none" selected="">None</option>
+              <option value="raised">Raised</option>
+              <option value="depressed">Depressed</option>
+              <option value="uniform">Uniform</option>
+              <option value="dropshadow">Dropshadow</option>
+            </select>
+          </div>
+          <div class="vjs-font-family vjs-tracksetting">
+            <label class="vjs-label" for="captions-font-family-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">Font Family</label>
+            <select id="captions-font-family-5b2df34d-f17a-4b45-9da7-cf6f989eadf2_component_910">
+              <option value="proportionalSansSerif" selected="">Proportional Sans-Serif</option>
+              <option value="monospaceSansSerif">Monospace Sans-Serif</option>
+              <option value="proportionalSerif">Proportional Serif</option>
+              <option value="monospaceSerif">Monospace Serif</option>
+              <option value="casual">Casual</option>
+              <option value="script">Script</option>
+              <option value="small-caps">Small Caps</option>
+            </select>
+          </div>
+        </div> <!-- vjs-tracksettings-font -->
+        <div class="vjs-tracksettings-controls">
+          <button class="vjs-default-button">Defaults</button>
+          <button class="vjs-done-button">Done</button>
+        </div>
+      </div> <!-- vjs-tracksettings -->
+    </div> <!--  role="document" --></div></div>
+</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+        </div>
+        
+    </div>
+    <div style="clear: both;"></div>
+
+</div>
+
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 backgroundcolor3">
+            <div class="clearfix panel content">
+                
+	<h1>Upcoming Events
+	</h1>
+	
+		<section id="upcoming-events">
+			<ul>
+	
+		<li class="upcoming-events-event event-21657">
+			<div class="event-date">
+				Sep 19-<br>Oct 05
+			</div>
+			<div class="event-link">
+				<a href="/calendarWeekView.aspx?schools=0,1,2,3,4,5&amp;schoolid=0&amp;types=&amp;eventID=21657&amp;viewDate=Sep 19" title="Fundraiser">
+					Fundraiser
+				</a>
+			</div>
+			<div class="event-location">
+				
+			</div>
+			<div class="event-time">
+				
+			</div>
+		</li>
+	
+		<li class="upcoming-events-event event-21426">
+			<div class="event-date">
+				Sep 20
+			</div>
+			<div class="event-link">
+				<a href="/calendarWeekView.aspx?schools=0,1,2,3,4,5&amp;schoolid=0&amp;types=&amp;eventID=21426&amp;viewDate=Sep 20" title="Boys' Tennis vs. Frankenmuth">
+					Boys' Tennis vs. Frankenmuth
+				</a>
+			</div>
+			<div class="event-location">
+				@Garber High School, 213 Pine St, Essexville, MI 48732
+			</div>
+			<div class="event-time">
+				4:00 PM — 4:00 PM
+			</div>
+		</li>
+	
+		<li class="upcoming-events-event event-21427">
+			<div class="event-date">
+				Sep 20
+			</div>
+			<div class="event-link">
+				<a href="/calendarWeekView.aspx?schools=0,1,2,3,4,5&amp;schoolid=0&amp;types=&amp;eventID=21427&amp;viewDate=Sep 20" title="Girls' Swim vs. Tri Cities">
+					Girls' Swim vs. Tri Cities
+				</a>
+			</div>
+			<div class="event-location">
+				@Saginaw Valley State University, 7400 Bay Rd, University Center, MI 48710
+			</div>
+			<div class="event-time">
+				5:00 PM — 5:00 PM
+			</div>
+		</li>
+	
+		<li class="upcoming-events-event event-21719">
+			<div class="event-date">
+				Sep 20
+			</div>
+			<div class="event-link">
+				<a href="/calendarWeekView.aspx?schools=0,1,2,3,4,5&amp;schoolid=0&amp;types=&amp;eventID=21719&amp;viewDate=Sep 20" title="Freshman Volleyball vs. John Glenn">
+					Freshman Volleyball vs. John Glenn
+				</a>
+			</div>
+			<div class="event-location">
+				@John Glenn High School, 3201 Kiesel Rd, Bay City, MI 48706
+			</div>
+			<div class="event-time">
+				5:30 PM — 5:30 PM
+			</div>
+		</li>
+	
+		<li class="upcoming-events-event event-21360">
+			<div class="event-date">
+				Sep 20
+			</div>
+			<div class="event-link">
+				<a href="/calendarWeekView.aspx?schools=0,1,2,3,4,5&amp;schoolid=0&amp;types=&amp;eventID=21360&amp;viewDate=Sep 20" title="JV Football vs. Bridgeport">
+					JV Football vs. Bridgeport
+				</a>
+			</div>
+			<div class="event-location">
+				@Garber High School, 213 Pine St, Essexville, MI 48732
+			</div>
+			<div class="event-time">
+				6:00 PM — 6:00 PM
+			</div>
+		</li>
+	
+		</ul> </section>
+	
+
+<footer id="upcoming-events-footer">
+	<a id="ctl00_ctl00_MasterContent_ContentColumnRight_ctl00_hl_viewAllEvents" class="view-all-events" href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=&amp;viewDate=9/20/2018">View All Events</a>
+	<a id="ctl00_ctl00_MasterContent_ContentColumnRight_ctl00_calendarLink" class="fullCal" href="/calMonthView.aspx?s=0&amp;y=2018&amp;m=9">View Full Calendar</a>
+</footer>
+
+    				
+
+<style>
+	.view-full-calendar {
+		padding-left: 10px;
+	}
+</style>
+
+<section id="calendar">
+	<table id="ctl00_ctl00_MasterContent_ContentColumnRight_ctl01_cal_events" class="calendar" cellspacing="0" cellpadding="2" title="Calendar" border="0" style="border-width:0px;border-collapse:collapse;">
+	<tbody><tr><td colspan="7" style="background-color:Silver;"><table class="calendar" cellspacing="0" border="0" style="width:100%;border-collapse:collapse;">
+		<tbody><tr><td style="width:15%;"><a href="javascript:__doPostBack('ctl00$ctl00$MasterContent$ContentColumnRight$ctl01$cal_events','V6787')" style="color:Black" title="Go to the previous month">&lt;&lt;<span class="obscure">Go to previous month</span></a></td><td align="center" style="width:70%;">September 2018</td><td align="right" style="width:15%;"><a href="javascript:__doPostBack('ctl00$ctl00$MasterContent$ContentColumnRight$ctl01$cal_events','V6848')" style="color:Black" title="Go to the next month">&gt;&gt;<span class="obscure">Go to next month</span></a></td></tr>
+	</tbody></table></td></tr><tr><th align="center" abbr="Sunday" scope="col">S</th><th align="center" abbr="Monday" scope="col">M</th><th align="center" abbr="Tuesday" scope="col">T</th><th align="center" abbr="Wednesday" scope="col">W</th><th align="center" abbr="Thursday" scope="col">T</th><th align="center" abbr="Friday" scope="col">F</th><th align="center" abbr="Saturday" scope="col">S</th></tr><tr><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/26/2018">26</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/27/2018">27</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/28/2018">28</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/29/2018">29</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/30/2018">30</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=8/31/2018">31</a></td><td class=" this-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/1/2018">1</a></td></tr><tr><td class=" this-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/2/2018">2</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/3/2018">3</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/4/2018">4</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/5/2018">5</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/6/2018">6</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/7/2018">7</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/8/2018">8</a></td></tr><tr><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/9/2018">9</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/10/2018">10</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/11/2018">11</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/12/2018">12</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/13/2018">13</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/14/2018">14</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/15/2018">15</a></td></tr><tr><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/16/2018">16</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/17/2018">17</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/18/2018">18</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/19/2018">19</a></td><td class=" today" align="center" style="color:White;background-color:Silver;width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/20/2018">20</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/21/2018">21</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/22/2018">22</a></td></tr><tr><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/23/2018">23</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/24/2018">24</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/25/2018">25</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/26/2018">26</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/27/2018">27</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/28/2018">28</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/29/2018">29</a></td></tr><tr><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=9/30/2018">30</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/1/2018">1</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/2/2018">2</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/3/2018">3</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/4/2018">4</a></td><td class=" with-event" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/5/2018">5</a></td><td class=" other-month" align="center" style="width:14%;"><a href="/calendarWeekView.aspx?schools=0&amp;schoolid=0&amp;types=1,2,24,25,26,32&amp;viewDate=10/6/2018">6</a></td></tr>
+</tbody></table>
+	<footer>
+		<a id="ctl00_ctl00_MasterContent_ContentColumnRight_ctl01_aCal" class="view-full-calendar" href="/calMonthView.aspx?s=0&amp;y=2018&amp;m=9&amp;t=0" target="_blank">View Full Calendar</a>
+	</footer>
+</section>
+
+
+            </div>
+        </div>
+        <div class="clr">
+        </div>
+    </div>
+
+
+
+                    </div>
+                    <div class="clr">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="footerwrapper">
+            <footer id="site-foot" class="container">
+
+
+                <div class="search-translate-container hidden-xs">
+                    <div id="google_translate_element">
+                    <div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="https://www.google.com/images/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Select Language</span><img src="https://www.google.com/images/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="https://www.google.com/images/cleardot.gif" alt="" width="1" height="1"><span aria-hidden="true" style="color: rgb(118, 118, 118);">▼</span></a></span></div></div></div>
+                    <div class="search">
+                        <label for="txtSearch" class="obscure">Search site using Google</label><input id="txtSearch" placeholder="Search" class="inputSearch" type="text">
+                        <a title="Search" class="bSearch glyphicon glyphicon-search"><span class="obscure">Search Site button</span></a>
+                    </div>
+                    <script type="text/javascript">
+                        function googleTranslateElementInit() {
+                            new google.translate.TranslateElement({ pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE }, 'google_translate_element');
+                        }
+                    </script>
+                    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+                </div>
+
+                
+
+<div class="row">
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 contact-us">
+		<div class="footer-contact-info">
+			<h6>Contact Us
+			</h6>
+			<div class="col-lg-6 col-md-6">
+				<div id="ctl00_ctl00_ctl08_hName">Essexville-Hampton Public Schools</div>
+				<div id="ctl00_ctl00_ctl08_hAddress">303 Pine St.<br>Essexville, MI 48732</div>
+				<div>
+					<a href="http://maps.google.com/maps?q=303 Pine St.+Essexville+MI+48732" id="ctl00_ctl00_ctl08_mapLink">View Map &amp; Directions</a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-6">
+				
+				<div id="ctl00_ctl00_ctl08_dphone">
+					<span id="ctl00_ctl00_ctl08_hPhone">Phone: 989-894-9700</span>
+				</div>
+				<div id="ctl00_ctl00_ctl08_dmainOffice">
+					<span id="ctl00_ctl00_ctl08_hmainOffice"></span>
+				</div>
+				<div id="ctl00_ctl00_ctl08_dfax">
+					<span id="ctl00_ctl00_ctl08_hfax">Fax: 989-894-9705</span>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-buttons">
+		<div id="social-links">
+			<h6>Stay Connected
+			</h6>
+			
+        <a href="/login.aspx" title="Essexville-Hampton Public Schools CMS Login" target="_self">
+            <span class="obscure">CMS Login</span>
+            <i class="fa fa-sign-in"></i>
+        </a>
+    
+        <a href="/Login/Intranet" title="Essexville-Hampton Public Schools Intranet" target="_self">
+            <span class="obscure">Intranet</span>
+            <i class="fa fa-sitemap"></i>
+        </a>
+    
+
+			<div class="clr">
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="footer-branding-container">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<a href="http://www.schoolpointe.com" target="_blank" class="sp-logo" alt="SchoolPointe">
+			<img alt="SchoolPointe" src="/customers/MI/EssexvilleHamptonPS/sysimages/custom/SP-Footer-Logo.png">
+		</a>
+	</div>
+</div>
+
+
+
+<script>
+
+	if (typeof ga === "undefined")
+	{
+		(function (i, s, o, g, r, a, m)
+		{
+			i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function ()
+			{
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date(); a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+	}
+
+	ga('create', 'UA-61700231-35', 'auto', { 'name': 'SchoolPointeTracker' });
+    ga('SchoolPointeTracker.send', 'pageview');
+
+    /**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+
+    var trackOutboundLink = function (url) {
+        ga('send', 'event', 'outbound', 'click', url, {
+            'transport': 'beacon',
+            'hitCallback': function () { document.location = url; }
+        });
+    }
+</script>
+
+
+            </footer>
+
+            <script src="/Customers/MI/EssexvilleHamptonPS/js/budgetBadge.js" type="text/javascript"></script>
+            <link href="/Customers/MI/EssexvilleHamptonPS/css/budgetBadge.css" rel="stylesheet" type="text/css">
+        </div>
+
+    
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="90059987">
+	<input type="hidden" name="__SCROLLPOSITIONX" id="__SCROLLPOSITIONX" value="0">
+	<input type="hidden" name="__SCROLLPOSITIONY" id="__SCROLLPOSITIONY" value="0">
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAC35kZXW7lWKYskpliKaE1eV/3zgoQwdC0HhnP91Vjg5FeULFSpjlyp/+Kx483UxW3orcFpvV5g1gpGqn2n+E3Qb6m7Q9lvlDoaWcTOsz3ukQ4/rrQu8M+iFjXdzj19I7/x63Tmy5403RzWru2AwoB1xH7YHjWdYvT3Xd+/pAxpUwz3SkQgcDRINrMvZbEZdpimryfvoCsp88sLQ5BUhGOC5M7BYthnHjg+iiV7MfJTcC4jrqnYKlHhQ7QQYyfVS61IqpEAvw1X6eFQZz+tXlLUgtGU1FDjy1H9bT1ePEL6Ndlt/0LLHtEudU6P6D3KxPY3KbREM79aBRYq2ctl07AvN0tWMcRHNsk6YVshuAjSHZ/Q70kpEhFwDGHCA2lLiWKGZI9aj+h58eVeHDdNXog4VqyTmIDupH3p1PDqZfeZ3LYmt3CLxZIWKZ7RQhPMawbf3KVM7iq+OfYUohOG8YJv9kv7lALGbnr7GAivU5KiPYyuSuaAPGLHheAmOPeb6IWGUXVZMsTwouab66jUpohpG9puQs7HB9N9g+GUEyNIPSK70o2S3gCrqHcX/gzDEBOvrN0o/QeBD28EiH85RoasG3/Pr56J7YdgTmoP9PB7hvbV03jw4a7MiSX5p4aE8RBlPzkYGALIPGt2q4HFT79QCpwYtBdsg7BDOh55XCdANeYPrWk9kcLzyBnJGM8SRe7HMbMvDPul+sUo1xa+hY/2cM4GUrZb3XknFtQsYxGLZk/ya+PnppbPgc1EXMiMnvKveB+ot3HiXRa26/tQZ8lAmKf9NjMauWb08yYFrmVUeEFqm8AhuPxuoHY6NoXUN8REh725vI6NXNZunm8eLkPfATGHHUZ+f/ohBa35r+80xz0UL1Lsbd/VVRSGL+Ps9NW7pE1C78zu7dq8X34IoqV+4WZMcxilNH608AG3q6voE103Q2bUtR/BRGrmWYtQkY2YONsgK7ZY/uh/mhDqkXbClTtfFnw==">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+
+theForm.oldSubmit = theForm.submit;
+theForm.submit = WebForm_SaveScrollPositionSubmit;
+
+theForm.oldOnSubmit = theForm.onsubmit;
+theForm.onsubmit = WebForm_SaveScrollPositionOnSubmit;
+//]]>
+</script>
+</form><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="https://www.gstatic.com/images/branding/product/1x/translate_24dp.png" width="20" height="20" alt="Google Translate"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Original text</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Contribute a better translation</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Language Translate Widget" style="visibility: visible; box-sizing: content-box; width: 1030px; height: 263px; display: none;"></iframe><div id="FB_budgetLinkDiv" class="">  <div id="badgeLiner" style="width: 160px; height: 283px; opacity: 1;">  	<a id="FB_budgetLink" href="https://dashboard.eidexinsights.com/Essexville-Hampton/" title="Click to learn more...">    	<span class="button"></span>  	</a>  	<a id="FB_dataLink" href="https://www.mischooldata.org/DistrictSchoolProfiles/ReportCard/Dashboard/Dashboard.aspx" target="_blank" title="Click to learn more...">    	<span class="button"></span>  	</a>  </div>  <a id="FB_bbCloser"></a></div></body></html>

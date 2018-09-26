@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: black;
 }
 
 .logo {
@@ -15,7 +16,7 @@ body {
 }
 
 .navigation-bar {
-  background-color: ;
+  background-color: #008000;
   height: 70px;
   width: 100%;
   text-align:center;
@@ -26,7 +27,8 @@ float:left;
 .navigation-bar ul {
   padding: 0px;
   margin: 0px;
-  text-align: center;
+  float: right;
+  text-align: right;
   display:inline-block;
   vertical-align:top;
 }
@@ -46,7 +48,7 @@ float:left;
   font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
   text-decoration: none;
   line-height: 70px;
-  padding: 5px 15px;
+  padding: 100px 15px;
   opacity: 0.7;
 }
 
@@ -103,6 +105,10 @@ h1{
 {
   background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/yayforthekickoff.jpg) no-repeat center center;
 }
+.slide:nth-child(5)
+{
+  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/stickynote.jpg) no-repeat center center;
+
 @keyframes animate{
   0%{
     left:0;
@@ -138,3 +144,8 @@ h1{
     left:0;
   }
 }
+<style>
+body{
+  background-color: black;
+}
+</style>

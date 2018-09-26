@@ -103,10 +103,6 @@ h1{
 {
   background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/yayforthekickoff.jpg) no-repeat center center;
 }
-.slide:nth-child(5)
-{
-  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/stickynote.jpg) no-repeat center center;
-}
 @keyframes animate{
   0%{
     left:0;

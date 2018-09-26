@@ -93,19 +93,19 @@ h1{
 }
 .slide:nth-child(2)
 {
-  background: url(https://images.pexels.com/photos/1036857/pexels-photo-1036857.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/kickofflunch2018.jpg) no-repeat center center;
 }
 .slide:nth-child(3)
 {
-  background: url(https://images.pexels.com/photos/796545/pexels-photo-796545.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/stream2018.jpg) no-repeat center center;
 }
 .slide:nth-child(4)
 {
-  background: url(https://images.pexels.com/photos/218983/pexels-photo-218983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/yayforthekickoff.jpg) no-repeat center center;
 }
 .slide:nth-child(5)
 {
-  background: url(https://images.pexels.com/photos/243757/pexels-photo-243757.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940) no-repeat center center;
+  background: url(https://raw.githubusercontent.com/CramerRobotics/CramerRobotics.github.io/master/images/stickynote.jpg) no-repeat center center;
 }
 @keyframes animate{
   0%{

@@ -65,7 +65,7 @@ body{
   overflow-x:hidden;
 }
 .slider{
-  width:100%;
+  width:500%;
   position:relative;
   animation:animate 10s linear infinite;
 }

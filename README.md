@@ -9,6 +9,8 @@ Things that need to be done! :)
 * create a gallery page
 * create a robots and awards page
 * pick out some cool fonts for the website
+* add a 404 error page
+
 
 Home Page:
 * make your gallery significantly smaller or make it slightly smaller and resize the images

@@ -12,7 +12,7 @@ html, body {
     left: 0;
     right: 0;
     background-color: #9aa297;
-    color: #FF6A00;
+    color: #FFFFFF;
     font-family: 'Press Start 2P', cursive;
     /* background-image: url("/images/Stars.png"); */
 }
@@ -31,7 +31,7 @@ h1 {
 
 
 .aboutPText {
-  color: #e6e6e6;
+  color: #ffffff;
 }
 
 
@@ -106,7 +106,7 @@ h1 {
 }
 
 p a {
-  color: #53edf3;
+  color: #ffffff;
 }
 
 /* This is the E-Ville Empire part at the very top of the page */

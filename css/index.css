@@ -180,7 +180,9 @@ footer{
 .lismallspace{
   margin: 0.5px 0;
 }
-
+p a {
+    color: #ffffff;
+}
 /* there's a column for the body as well like in the footer */
 .column {
     float: left;
@@ -287,7 +289,7 @@ p {
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 50px;
+    width: 40px;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;

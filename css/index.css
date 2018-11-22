@@ -1,3 +1,10 @@
+/* loads custom font Press start 2p  */
+@font-face {
+    font-family: "Press Start 2P";
+    src: url('PressStart2P/PressStart2P-Regular.ttf') format("truetype");
+}
+
+
 /* css for all properties */
 html, body {
     top: 0;
@@ -6,7 +13,7 @@ html, body {
     right: 0;
     background-color: #9aa297;
     color: #FFFFFF;
-    font-family: 'Space Mono', monospace;
+    font-family: 'Press Start 2P', cursive;
     /* background-image: url("/images/Stars.png"); */
 }
 
@@ -156,12 +163,10 @@ footer{
     -webkit-transition-duration: 0.4s; /* Safari *
     transition-duration: 0.4s;
     cursor: pointer;
-
     background-color: #1d1d1d;
     color: white;
     border: 2px solid #4395cd;
 }
-
 .button:hover {
     background-color: #4395cd;
     color: white;
@@ -282,7 +287,7 @@ p {
 .fa {
     padding: 20px;
     font-size: 30px;
-    width: 20px;
+    width: 30px;
     text-align: center;
     text-decoration: none;
     border-radius: 50%;

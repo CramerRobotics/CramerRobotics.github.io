@@ -4,7 +4,6 @@
 
 Things that need to be done! :)
 
-* create a contact page
 * create a sponsors page
 * create a gallery page
 * create a robots and awards page

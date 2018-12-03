@@ -194,7 +194,12 @@ p a {
     clear: both;
     display: table;
 }
-
+.row1::after {
+    content: "";
+    clear: both;
+    display: table;
+    background-color: #3498db;
+}
 .column a{
   color: white;
 }

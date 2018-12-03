@@ -1,39 +1,36 @@
 /* loads custom font Press start 2p  */
 @font-face {
-    font-family: "Press Start 2P";
-    src: url('PressStart2P/PressStart2P-Regular.ttf') format("truetype");
+  font-family: "Press Start 2P";
+  src: url("PressStart2P/PressStart2P-Regular.ttf") format("truetype");
 }
-
 
 /* css for all properties */
-html, body {
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url("/images/PIA20865-16.jpg");
-    color: #FF8300;
-    font-family: 'Press Start 2P', cursive;
-    /* background-image: url("/images/Stars.png"); */
+html,
+body {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url("/images/PIA20865-16.jpg");
+  color: #ff8300;
+  font-family: "Press Start 2P", cursive;
+  /* background-image: url("/images/Stars.png"); */
 }
-
 
 /* Big text looks awesome with this font */
 h1 {
-  font-family: 'STARWARS'
+  font-family: "STARWARS";
 }
 
 /* This is the Sponsors on the index page, thats why its called sponsorIndex */
-.SponsorIndex{
+.SponsorIndex {
   margin-top: 10%;
-  background-color: rgba(77,78,73, 0.2);
+  background-color: rgba(77, 78, 73, 0.2);
 }
-
 
 .aboutPText {
   color: #ffffff;
 }
-
 
 /*changes color of gold sponsor on the become a sponser page*/
 .gold {
@@ -41,21 +38,21 @@ h1 {
 }
 /*changes color of silver sponsor on the become a sponser page*/
 .silver {
-    color: #c0c0c0;
+  color: #c0c0c0;
 }
 /*changes color of bronze sponsor on the become a sponser page*/
 .bronze {
-    color: #cd7f32;
+  color: #cd7f32;
 }
-.scholarshipsHeader{
+.scholarshipsHeader {
   margin-left: 5%;
 }
-.scholarships{
+.scholarships {
   color: #e6e6e6;
   margin-left: 10%;
 }
 
-.aboutMentors{
+.aboutMentors {
   color: #e6e6e6;
   margin-left: 10%;
 }
@@ -64,49 +61,49 @@ h1 {
 .sponsor {
   text-align: left;
 }
-.sponsor p{
+.sponsor p {
   padding-left: 5%;
   color: #e6e6e6;
 }
 
-.sponsor li{
+.sponsor li {
   padding-left: 18%;
   color: #e6e6e6;
   list-style-type: none;
 }
 
-.sponsor h2{
+.sponsor h2 {
   color: white;
 }
 
 /* This is the navbar stuff */
 .navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
 }
 
 .navbar li {
-    float: left;
+  float: left;
 }
 
 .navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 16px;
-    text-decoration: none;
-    font-size: 98%;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size: 98%;
 }
 
 .navbar li a:hover {
-    background-color: #111111;
+  background-color: #111111;
 }
 
 /* This is the E-Ville Empire part at the very top of the page */
-.main{
+.main {
   padding-top: 1px;
   padding-bottom: 1px;
   margin-top: 1%;
@@ -117,12 +114,12 @@ h1 {
   letter-spacing: 3px;
 }
 /* Stuff that needs to be center */
-.center{
+.center {
   text-align: center;
 }
 
 /* Footer Stuff. The links at the bottom of the page */
-footer{
+footer {
   list-style-type: none;
   font-size: 60%;
   padding-top: 2%;
@@ -139,7 +136,7 @@ footer{
   padding: 5px;
 }
 
-.footerColumn a{
+.footerColumn a {
   color: white;
 }
 
@@ -148,7 +145,6 @@ footer{
   color: white;
   padding-right: 0%;
 }
-
 
 /* makes pretty buttons */
 /*.button {
@@ -172,41 +168,53 @@ footer{
     color: white;
 }
 */
-.lispace{
+.lispace {
   margin: 10px 0;
-}'
+}
+"
 .lismallspace{
   margin: 0.5px 0;
 }
 p a {
     color: #ffffff;
 }
-/* there's a column for the body as well like in the footer */
-.column {
-    float: left;
-    width: 40%;
-    padding: 5px;
+/* there"s
+  a
+  column
+  for
+  the
+  body
+  as
+  well
+  like
+  in
+  the
+  footer
+  */
+  .column {
+  float: left;
+  width: 40%;
+  padding: 5px;
 }
 
 /* Clearfix (clear floats) */
 .row::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
+  text-align: center;
 }
-.row1::after {
-    content: "";
-    clear: both;
-    display: table;
-    background-color: #3498db;
+img.resize{
+  max-width: 50%
+  max-height: 50%;
 }
-.column a{
+.column a {
   color: white;
 }
 
 /* Awards Right Side */
 .awardsR {
-  white-space:nowrap;
+  white-space: nowrap;
 }
 /* Text Awards - Puts semi-transparent layer over the whole div*/
 /*.awardText {
@@ -232,96 +240,96 @@ p {
 
 /* Custom Font sizes, helps with moble viwing */
 h1 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
 
 h2 {
-    font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
 h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 h4 {
-    font-size: 1.75rem;
+  font-size: 1.75rem;
 }
 
 h5 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h6 {
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 p {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 480px) {
-    html {
-        font-size: 12px;
-    }
+  html {
+    font-size: 12px;
+  }
 }
 
 @media (min-width: 480px) {
-    html {
-        font-size: 13px;
-    }
+  html {
+    font-size: 13px;
+  }
 }
 
 @media (min-width: 768px) {
-    html {
-        font-size: 14px;
-    }
+  html {
+    font-size: 14px;
+  }
 }
 
 @media (min-width: 992px) {
-    html {
-        font-size: 15px;
-    }
+  html {
+    font-size: 15px;
+  }
 }
 
 @media (min-width: 1200px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 /* Style all font awesome icons */
 .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 /* Add a hover effect if you want */
 .fa:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
 /* Facebook icon */
 .fa-facebook {
-    background: #3B5998;
-    color: white;
+  background: #3b5998;
+  color: white;
 }
 
 /* Twitter icon*/
 .fa-twitter {
-    background: #55ACEE;
-    color: white;
+  background: #55acee;
+  color: white;
 }
 
 /* Instagram icon*/
 .fa-instagram {
-    background: #8a3ab9;
-    color: white;
+  background: #8a3ab9;
+  color: white;
 }
 /* YouTube icon*/
 .fa-youtube {
-    background: #ff0000;
-    color: white;
+  background: #ff0000;
+  color: white;
 }

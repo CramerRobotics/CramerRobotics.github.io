@@ -1,3 +1,8 @@
 # CramerRobotics.github.io
-Dude learn how to make a navbar correctly - love your big sister (i'm on nick's account)
-stuff
+
+Things that need to be done! :)
+
+* create a sponsors page
+* create a gallery page
+* create a robots and awards page
+* add a 404 error page

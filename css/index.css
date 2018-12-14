@@ -18,15 +18,15 @@ body {
   right: 0;
   background-image: url("/images/Capture.PNG");
   color: #ff8300;
-  font-family: "Press Start 2P", cursive;
+  font-family: "Star Jedi";
   /* background-image: url("/images/Stars.png"); */
+  /* font-family: "Press Start 2P", cursive; */
 }
 
 /* Big text looks awesome with this font */
 h1 {
   font-family: 'Star Jedi', arial;
   font-size: 48px;
-  text-shadow: 4px 4px 4px #aaa;
 }
 
 /* This is the Sponsors on the index page, thats why its called sponsorIndex */

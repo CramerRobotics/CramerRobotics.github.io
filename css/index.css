@@ -3,7 +3,7 @@
   font-family: "Press Start 2P";
   src: url("PressStart2P/PressStart2P-Regular.ttf") format("truetype");
 }
-
+@import url(http://allfont.net/allfont.css?fonts=star-jedi);
 /* css for all properties */
 html,
 body {
@@ -19,7 +19,9 @@ body {
 
 /* Big text looks awesome with this font */
 h1 {
-  font-family: "STARWARS";
+  font-family: 'Star Jedi', arial;
+  font-size: 48px;
+  text-shadow: 4px 4px 4px #aaa;
 }
 
 /* This is the Sponsors on the index page, thats why its called sponsorIndex */

@@ -140,6 +140,9 @@ footer {
   color: white;
 }
 
+a{
+  color: #66ccff;
+}
 /* for the footer text */
 .footerText {
   color: white;

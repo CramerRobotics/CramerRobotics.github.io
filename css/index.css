@@ -37,7 +37,6 @@ h1 {
 
 .aboutPText {
   color: #ffffff;
-  font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 
 /*changes color of gold sponsor on the become a sponser page*/
@@ -246,6 +245,7 @@ img.resize{
 p {
   line-height: 1.2em !important;
   color: white;
+  font-family: 'ZCOOL QingKe HuangYou', cursive;
   /*background: rgba(0, 0, 0, 0.5);*/
 }
 

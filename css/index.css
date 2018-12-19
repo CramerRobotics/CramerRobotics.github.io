@@ -40,30 +40,30 @@ h1 {
 }
 
 /*changes color of gold sponsor on the become a sponser page*/
-.gold {
+/* .gold {
   color: #ffd700;
 }
 /*changes color of silver sponsor on the become a sponser page*/
-.silver {
+/* .silver {
   color: #c0c0c0;
-}
+} */
 /*changes color of bronze sponsor on the become a sponser page*/
-.bronze {
+/* .bronze {
   color: #cd7f32;
-}
-.scholarshipsHeader {
+} */
+/* .scholarshipsHeader {
   margin-left: 5%;
 }
 .scholarships {
   color: #e6e6e6;
   margin-left: 10%;
 }
-
+ */
 .aboutMentors {
   color: #e6e6e6;
   margin-left: 10%;
 }
-
+ */
 /* for sponsor.html */
 .sponsor {
   text-align: left;
@@ -204,7 +204,7 @@ a {
   .column {
   float: left;
   width: 40%;
-  padding: 5px;
+  padding: 50px;
 }
 
 /* Clearfix (clear floats) */

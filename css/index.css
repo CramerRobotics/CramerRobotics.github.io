@@ -63,7 +63,6 @@ h1 {
   color: #e6e6e6;
   margin-left: 10%;
 }
- */
 /* for sponsor.html */
 .sponsor {
   text-align: left;
@@ -147,9 +146,9 @@ footer {
   color: white;
 }
 
-a {
+/* a p {
   color: #66ccff;
-}
+} */
 /* for the footer text */
 .footerText {
   color: white;

@@ -1,8 +1,3 @@
-/* loads custom font Press start 2p  */
-@font-face {
-  font-family: "Press Start 2P";
-  src: url("PressStart2P/PressStart2P-Regular.ttf") format("truetype");
-}
 /* loads custom font Star Jedi  */
 @font-face {
   font-family: "Star Jedi";
@@ -19,8 +14,6 @@ body {
   background-image: url("/images/Capture.PNG");
   color: #ff8300;
   font-family: "Star Jedi";
-  /* background-image: url("/images/Stars.png"); */
-  /* font-family: "Press Start 2P", cursive; */
 }
 
 /* Big text looks awesome with this font */

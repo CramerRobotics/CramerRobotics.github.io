@@ -5,8 +5,7 @@
 }
 /* @import url(http://allfont.net/allfont.css?fonts=star-jedi); */
 /* css for all properties */
-html,
-body {
+html, body {
   top: 0;
   bottom: 0;
   left: 0;
@@ -28,9 +27,9 @@ h1 {
   background-color: rgba(77, 78, 73, 0.2);
 }
 
-.aboutPText {
+/* .aboutPText {
   color: #ffffff;
-}
+} */
 
 /*changes color of gold sponsor on the become a sponser page*/
 /* .gold {
@@ -52,10 +51,10 @@ h1 {
   margin-left: 10%;
 }
  */
-.aboutMentors {
+/* .aboutMentors {
   color: #e6e6e6;
   margin-left: 10%;
-}
+} */
 /* for sponsor.html */
 .sponsor {
   text-align: left;
@@ -180,19 +179,7 @@ footer {
 a {
     color: #0baeae;
 }
-/* there"s
-  a
-  column
-  for
-  the
-  body
-  as
-  well
-  like
-  in
-  the
-  footer
-  */
+/* there's a column for the body as well like in the footer */
   .column {
   float: left;
   width: 40%;

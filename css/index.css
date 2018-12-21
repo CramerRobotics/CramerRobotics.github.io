@@ -222,9 +222,9 @@ img.resize{
 }
 
 /* Awards Right Side */
-.awardsR {
+/* .awardsR {
   white-space: nowrap;
-}
+} */
 /* Text Awards - Puts semi-transparent layer over the whole div*/
 /*.awardText {
   background: rgba(0, 0, 0, 0.5);

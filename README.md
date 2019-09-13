@@ -13,5 +13,5 @@ Things that need to be done! :)
   * What are you doing/did you do with the website?
   * How are you planning to improve the website?
   * Why did you join the website coding team?
-  * Use an the h1 element to add your name, and the p elements to add the rest
+  * Use the h1 element to add your name, and the p elements to add the rest
 * Once you are finished, in the commit area at the bottom, add your FIRST NAME ONLY as the title, and make sure you hit the green "Commit" button.

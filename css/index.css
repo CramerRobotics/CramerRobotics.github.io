@@ -177,7 +177,7 @@ footer {
   margin: 0.5px 0;
 }
 a {
-    color: #ff8300;
+    color: #d3b5998;
 }
 /* there's a column for the body as well like in the footer */
   .column {
@@ -198,7 +198,7 @@ img.resize{
   max-height: 50%;
 }
 .column a {
-  color: white;
+  color: #ff8300;
 }
 
 /* Awards Right Side */

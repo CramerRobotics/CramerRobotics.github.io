@@ -26,36 +26,6 @@ h1 {
   margin-top: 10%;
   background-color: rgba(77, 78, 73, 0.2);
 }
-
-/* .aboutPText {
-  color: #ffffff;
-} */
-
-/*changes color of gold sponsor on the become a sponser page*/
-/* .gold {
-  color: #ffd700;
-}
-/*changes color of silver sponsor on the become a sponser page*/
-/* .silver {
-  color: #c0c0c0;
-} */
-/*changes color of bronze sponsor on the become a sponser page*/
-/* .bronze {
-  color: #cd7f32;
-} */
-/* .scholarshipsHeader {
-  margin-left: 5%;
-}
-.scholarships {
-  color: #e6e6e6;
-  margin-left: 10%;
-}
- */
-/* .aboutMentors {
-  color: #e6e6e6;
-  margin-left: 10%;
-} */
-/* for sponsor.html */
 .sponsor {
   text-align: left;
 }
@@ -99,15 +69,12 @@ h1 {
 .navbar li a:hover {
   background-color: #111111;
 }
-
-/* This is the E-Ville Empire part at the very top of the page */
 .main {
   padding-top: 1px;
   padding-bottom: 1px;
   margin-top: 1%;
   margin-bottom: 1%;
   text-align: center;
-  /*background-color: #2bb5dc; */
   color: white;
   letter-spacing: 3px;
 }
